@@ -3,9 +3,12 @@ import {
   links as searchInputLinks,
 } from "~/components/Inputs/search/Search";
 
-import { EmailInput } from "~/components/Inputs/email/Email";
+import {
+  EmailInput,
+  links as emailInputStyles,
+} from "~/components/Inputs/email/Email";
 
-export const links = () => [...searchInputLinks()];
+export const links = () => [...searchInputLinks(), ...emailInputStyles()];
 
 export default function Index() {
   return (

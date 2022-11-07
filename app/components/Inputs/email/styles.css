@@ -1,0 +1,32 @@
+.email_input {
+  margin: 1rem 0;
+  border: 0;
+  padding: 0;
+  display: inline-block;
+  vertical-align: middle;
+  white-space: normal;
+  background: none;
+  -webkit-appearance: textfield;
+  border-bottom: 1px solid var(--greyish-blue);
+  color: var(--pure-white);
+  caret-color: var(--red);
+  width: 32.1rem;
+  height: 3.2rem;
+  padding-bottom: 1.8rem;
+}
+
+.email_input:focus {
+  outline: 0;
+}
+
+.email_input:active,
+.email_input:focus {
+  border-bottom: 1px solid var(--pure-white);
+}
+
+.email_input::placeholder {
+  color: var(--pure-white);
+
+  mix-blend-mode: normal;
+  opacity: 0.5;
+}

@@ -18,7 +18,7 @@ export const EmailInput = React.forwardRef(
       <label className="email_container" htmlFor={props.id}>
         <input
           id={props.id}
-          className="email_input medium_heading"
+          className="email_input small_heading"
           type="email"
           ref={ref}
           {...props}
