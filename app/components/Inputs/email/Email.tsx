@@ -46,3 +46,5 @@ export const EmailInput = React.forwardRef(
     );
   }
 );
+
+EmailInput.displayName = "Email Input";
