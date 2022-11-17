@@ -1,5 +1,4 @@
 import { jestPreviewConfigure } from "jest-preview";
-import "./app/styles/global.css";
 
 jestPreviewConfigure({
   // Enable autoPreview so Jest Preview runs automatically
