@@ -32,7 +32,7 @@ export const EmailInput = React.forwardRef(
       <label className="email_container" htmlFor={props.id}>
         <input
           id="email"
-          className="email_input small_heading"
+          className="email_input small_normal_text"
           type="email"
           ref={innerRef}
           {...props}
@@ -42,7 +42,10 @@ export const EmailInput = React.forwardRef(
           onFocus={doValidation}
           onChange={doValidation}
         />
-        <span data-testid="email-error" className="text-message">
+        <span
+          data-testid="email-error"
+          className="error-color small_normal_text"
+        >
           {error}
         </span>
       </label>
