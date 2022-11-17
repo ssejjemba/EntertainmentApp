@@ -1,6 +1,9 @@
 import type { ForwardedRef } from "react";
+import { useRef } from "react";
+import { useState } from "react";
 import React from "react";
 import styles from "./styles.css";
+import { validateEmail } from "~/utils/helper";
 
 export const links = () => [{ rel: "stylesheet", href: styles }];
 
@@ -9,39 +12,39 @@ type EmailInputProps = {
   id?: string;
 };
 
-function emailValidator(e: React.FocusEvent<HTMLInputElement>) {
-  const pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
-  const inputElement: HTMLInputElement | null = e.target;
-  const emailValue = inputElement?.value;
-  const message: any = document.querySelector(".text-message");
-
-  if (!emailValue) {
-    message.innerHTML = "Can't be empty";
-    console.log("am doing something about Can't be empty");
-  } else if (!emailValue.match(pattern)) {
-    message.innerHTML = "Invalid Email Address";
-    console.log("am doing something about Invalid Email Address");
-  }
-}
-
 export const EmailInput = React.forwardRef(
   (
     { children, ...props }: EmailInputProps,
     ref: ForwardedRef<HTMLInputElement>
   ) => {
+    const [error, setError] = useState("");
+    const innerRef = useRef<null | HTMLInputElement>(null);
+
+    const doValidation = () => {
+      const currentInputText = innerRef.current?.value;
+      if (currentInputText !== undefined) {
+        const result = validateEmail(currentInputText);
+        setError(result);
+      }
+    };
+
     return (
       <label className="email_container" htmlFor={props.id}>
         <input
           id="email"
           className="email_input small_heading"
           type="email"
-          ref={ref}
+          ref={innerRef}
           {...props}
           placeholder="Email address"
           required
-          onBlur={emailValidator}
+          data-testid="email-input"
+          onFocus={doValidation}
+          onChange={doValidation}
         />
-        <p className="text-message"></p>
+        <span data-testid="email-error" className="text-message">
+          {error}
+        </span>
       </label>
     );
   }
