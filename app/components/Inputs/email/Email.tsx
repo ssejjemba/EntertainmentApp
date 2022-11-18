@@ -25,8 +25,6 @@ export const EmailInput = React.forwardRef(
 
       const result = validateEmail(currentInputText);
       setError(result);
-
-      console.log(result);
     };
 
     return (

@@ -8,9 +8,16 @@ import {
   links as emailInputStyles,
 } from "~/components/Inputs/email/Email";
 
-import { LoginButton } from "~/components/buttons/LoginButton";
+import {
+  LoginButton,
+  links as loginButtonStyles,
+} from "~/components/buttons/LoginButton";
 
-export const links = () => [...searchInputLinks(), ...emailInputStyles()];
+export const links = () => [
+  ...searchInputLinks(),
+  ...emailInputStyles(),
+  ...loginButtonStyles(),
+];
 
 export default function Index() {
   return (
