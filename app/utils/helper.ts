@@ -1,6 +1,6 @@
 import Errors from "~/constants/errors";
 
-export function validateEmail(email: string): string {
+export function validateEmail(email: any): string {
   if (!email) {
     return Errors.EMPTY_EMAIL;
   }

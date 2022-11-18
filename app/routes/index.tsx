@@ -8,6 +8,8 @@ import {
   links as emailInputStyles,
 } from "~/components/Inputs/email/Email";
 
+import { LoginButton } from "~/components/buttons/LoginButton";
+
 export const links = () => [...searchInputLinks(), ...emailInputStyles()];
 
 export default function Index() {
@@ -15,6 +17,7 @@ export default function Index() {
     <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.4" }}>
       <SearchInput id="__search_bar_input__" />
       <EmailInput />
+      <LoginButton>Login to your account</LoginButton>
     </div>
   );
 }

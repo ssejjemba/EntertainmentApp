@@ -22,10 +22,11 @@ export const EmailInput = React.forwardRef(
 
     const doValidation = () => {
       const currentInputText = innerRef.current?.value;
-      if (currentInputText !== undefined) {
-        const result = validateEmail(currentInputText);
-        setError(result);
-      }
+
+      const result = validateEmail(currentInputText);
+      setError(result);
+
+      console.log(result);
     };
 
     return (
