@@ -12,6 +12,8 @@ import {
   LoginButton,
   links as loginButtonStyles,
 } from "~/components/buttons/LoginButton";
+import { IdleIcon } from "~/components/bookmark-icons/idle-icon/IdleIcon";
+import { ActiveIcon } from "~/components/bookmark-icons/active-icon/ActiveIcon";
 
 export const links = () => [
   ...searchInputLinks(),
@@ -25,6 +27,8 @@ export default function Index() {
       <SearchInput id="__search_bar_input__" />
       <EmailInput />
       <LoginButton>Login to your account</LoginButton>
+      <IdleIcon />
+      <ActiveIcon />
     </div>
   );
 }
