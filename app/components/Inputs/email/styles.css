@@ -1,10 +1,9 @@
 .email_container {
   width: 49rem;
-  height: 7rem;
+  height: 3.7rem;
   display: flex;
-  flex-direction: column;
-  margin-top: 24px;
-  position: relative;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .email_input {
@@ -21,15 +20,6 @@
   min-width: 36rem;
   max-height: 3.2rem;
   padding-bottom: 1.8rem;
-  font-style: normal;
-  font-weight: 300;
-  font-size: 15px;
-  line-height: 19px;
-  padding: 8px;
-}
-
-.wrong_email {
-  border-bottom: 1px solid red;
 }
 
 .email_input:focus {
@@ -41,20 +31,11 @@
   border-bottom: 1px solid var(--pure-white);
 }
 
-input.placeholderred::-webkit-input-placeholder {
-  font-size: 12px;
-  position: absolute;
-  right: 0;
-  color: red;
+.email_input::placeholder {
+  color: var(--pure-white);
+
   mix-blend-mode: normal;
   opacity: 0.5;
-}
-
-.email_input::placeholder {
-  font-style: normal;
-  font-weight: 300;
-  font-size: 15px;
-  color: rgba(255, 253, 253, 0.5);
 }
 
 .text-message {
@@ -62,9 +43,6 @@ input.placeholderred::-webkit-input-placeholder {
   font-size: 1.3rem;
   line-height: 1.6;
   color: var(--red);
-  position: absolute;
-  right: 0;
-  bottom: 0;
 }
 
 .error-color {
