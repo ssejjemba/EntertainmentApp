@@ -1,9 +1,10 @@
-import type { ForwardedRef } from "react";
+import { ForwardedRef, useEffect } from "react";
 import { useRef } from "react";
 import { useState } from "react";
 import React from "react";
 import styles from "./styles.css";
 import { validateEmail } from "~/utils/helper";
+import errors from "~/constants/errors";
 
 export const links = () => [{ rel: "stylesheet", href: styles }];
 
@@ -28,8 +29,17 @@ export const EmailInput = React.forwardRef(
       }
     };
 
+    let containerClass = ''
+
+    if(error !== ""){
+      containerClass = 'red_border'
+    }
+
+   
+    
+
     return (
-      <label className="email_container" htmlFor={props.id}>
+      <label className={`email_container ${containerClass}`} htmlFor={props.id}>
         <input
           id="email"
           className="email_input small_heading"
