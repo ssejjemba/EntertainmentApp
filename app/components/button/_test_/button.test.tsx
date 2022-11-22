@@ -14,8 +14,8 @@ describe("Button component tests",()=>{
     test("succesfully renders the button name",()=>{
         render(<Button buttonName="Arthur"/>)
     
-const buttonText = screen.getByText(/Arthur/i)
-expect(buttonText).toBeInTheDocument
+    const buttonText = screen.getByText(/Arthur/i)
+    expect(buttonText).toBeInTheDocument
 
     })
 })
