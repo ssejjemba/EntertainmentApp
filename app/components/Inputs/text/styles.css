@@ -1,4 +1,4 @@
-.email_container {
+.input_container {
   width: 49rem;
   height: 3.7rem;
   display: flex;
@@ -6,7 +6,7 @@
   justify-content: space-between;
 }
 
-.email_input {
+.input_field {
   margin: 1rem 0;
   border: 0;
   padding: 0;
@@ -23,16 +23,16 @@
   padding-bottom: 1.8rem;
 }
 
-.email_input:focus {
+.input_field:focus {
   outline: 0;
 }
 
-.email_input:active,
-.email_input:focus {
+.input_field:active,
+.input_field:focus {
   border-bottom: 1px solid var(--pure-white);
 }
 
-.email_input::placeholder {
+.input_field::placeholder {
   color: var(--pure-white);
 
   mix-blend-mode: normal;

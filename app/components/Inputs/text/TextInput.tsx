@@ -3,18 +3,20 @@ import { useRef } from "react";
 import { useState } from "react";
 import React from "react";
 import styles from "./styles.css";
-import { validateEmail } from "~/utils/helper";
 
 export const links = () => [{ rel: "stylesheet", href: styles }];
 
-type EmailInputProps = {
+type TextInputProps = {
   children?: React.ReactNode;
   id?: string;
+  type?: string;
+  placeholder?: string;
+  validationFn?: (text: string) => string;
 };
 
-export const EmailInput = React.forwardRef(
+export const TextInput = React.forwardRef(
   (
-    { children, ...props }: EmailInputProps,
+    { children, ...props }: TextInputProps,
     ref: ForwardedRef<HTMLInputElement>
   ) => {
     const [error, setError] = useState("");
@@ -22,27 +24,27 @@ export const EmailInput = React.forwardRef(
 
     const doValidation = () => {
       const currentInputText = innerRef.current?.value;
-      if (currentInputText !== undefined) {
-        const result = validateEmail(currentInputText);
+      if (currentInputText !== undefined && props.validationFn) {
+        const result = props.validationFn(currentInputText);
         setError(result);
       }
     };
 
     return (
-      <label className="email_container" htmlFor={props.id}>
+      <label className="input_container" htmlFor={props.id}>
         <input
           id="email"
-          className="email_input small_heading"
-          type="email"
+          className="input_field small_heading"
+          type={props.type}
           ref={innerRef}
           {...props}
-          placeholder="Email address"
+          placeholder={props.placeholder}
           required
-          data-testid="email-input"
+          data-testid="text-input"
           onFocus={doValidation}
           onChange={doValidation}
         />
-        <span data-testid="email-error" className="text-message">
+        <span data-testid="input-error" className="text-message">
           {error}
         </span>
       </label>
@@ -50,4 +52,4 @@ export const EmailInput = React.forwardRef(
   }
 );
 
-EmailInput.displayName = "Email Input";
+TextInput.displayName = "Text Input";
