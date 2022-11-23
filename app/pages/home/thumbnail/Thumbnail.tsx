@@ -1,0 +1,41 @@
+import React, { useState } from "react";
+import { IdleIcon } from "../../../components/bookmark-icons/idle-icon/IdleIcon";
+import { ActiveIcon } from "~/components/bookmark-icons/active-icon/ActiveIcon";
+import styles from "./styles.css";
+
+export const links = () => [{ rel: "stylesheet", href: styles }];
+
+type ThumbnailProps = {
+  children?: React.ReactNode;
+  name: string;
+  src: string;
+};
+
+export const Thumbnail = ({ name, src }: ThumbnailProps) => {
+  const [bookmarked, setbookmarked] = useState(false);
+  return (
+    <div
+      className="thumbnail-container"
+      data-testid="thumbnail"
+      onClick={() => setbookmarked(true)}
+    >
+      {bookmarked ? (
+        <ActiveIcon className="bookmark-icon active-bookmark" />
+      ) : (
+        <IdleIcon className="bookmark-icon idle-bookmark" />
+      )}
+      <img alt={name} src={src} className="thumbnail-img" />
+      <div className="hover-container">
+        <div className="controls-wrapper">
+          <svg width="30" height="30" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M15 0C6.713 0 0 6.713 0 15c0 8.288 6.713 15 15 15 8.288 0 15-6.712 15-15 0-8.287-6.712-15-15-15Zm-3 21V8l9 6.5-9 6.5Z"
+              fill="#fff"
+            />
+          </svg>
+          <span className="extra_small_heading">Play</span>
+        </div>
+      </div>
+    </div>
+  );
+};

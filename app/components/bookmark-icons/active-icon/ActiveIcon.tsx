@@ -1,6 +1,12 @@
-export const ActiveIcon = () => {
+// Active Bookmark Icon
+
+type BookmarkIconProps = {
+  className?: string;
+};
+
+export const ActiveIcon = ({ className }: BookmarkIconProps) => {
   return (
-    <div>
+    <div className={className}>
       <svg
         width="12"
         height="14"

@@ -12,13 +12,17 @@ import {
   LoginButton,
   links as loginButtonStyles,
 } from "~/components/buttons/LoginButton";
-import { IdleIcon } from "~/components/bookmark-icons/idle-icon/IdleIcon";
-import { ActiveIcon } from "~/components/bookmark-icons/active-icon/ActiveIcon";
+
+import {
+  Thumbnail,
+  links as thumbnailStyles,
+} from "~/pages/home/thumbnail/Thumbnail";
 
 export const links = () => [
   ...searchInputLinks(),
   ...emailInputStyles(),
   ...loginButtonStyles(),
+  ...thumbnailStyles(),
 ];
 
 export default function Index() {
@@ -27,8 +31,10 @@ export default function Index() {
       <SearchInput id="__search_bar_input__" />
       <EmailInput />
       <LoginButton>Login to your account</LoginButton>
-      <IdleIcon />
-      <ActiveIcon />
+      <Thumbnail
+        name="earth"
+        src="assets/thumbnails/earths-untouched/regular/medium.jpg"
+      />
     </div>
   );
 }
