@@ -1,5 +1,10 @@
+<<<<<<< HEAD:app/components/Inputs/email/styles.css
 .email_container {
   width: 33.6rem;
+=======
+.input_container {
+  width: 49rem;
+>>>>>>> main:app/components/Inputs/text/styles.css
   height: 3.7rem;
   padding: 2px;
   border-bottom: 1px solid var(--greyish-blue);
@@ -9,7 +14,12 @@
   justify-content: space-between;
 }
 
+<<<<<<< HEAD:app/components/Inputs/email/styles.css
 .email_input {
+=======
+.input_field {
+  margin: 1rem 0;
+>>>>>>> main:app/components/Inputs/text/styles.css
   border: 0;
   padding: 0;
   display: inline-block;
@@ -23,16 +33,21 @@
   padding-bottom: 1.8rem;
 }
 
-.email_input:focus {
+.input_field:focus {
   outline: 0;
 }
 
+<<<<<<< HEAD:app/components/Inputs/email/styles.css
 .email_input:active,
 .email_input:focus .email_container {
+=======
+.input_field:active,
+.input_field:focus {
+>>>>>>> main:app/components/Inputs/text/styles.css
   border-bottom: 1px solid var(--pure-white);
 }
 
-.email_input::placeholder {
+.input_field::placeholder {
   color: var(--pure-white);
 
   mix-blend-mode: normal;
