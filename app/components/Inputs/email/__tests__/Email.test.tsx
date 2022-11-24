@@ -6,15 +6,14 @@ import "@testing-library/jest-dom";
 import Errors from "~/constants/errors";
 
 describe("Email component tests", () => {
+  
   test("Email component renders successfully", () => {
     render(<EmailInput />);
 
     const inputElement = screen.getByTestId("email-input");
-
     expect(inputElement).toBeInTheDocument();
 
     const errorElement = screen.getByTestId("email-error");
-
     expect(errorElement).toBeInTheDocument();
 
     expect(errorElement.innerHTML).toBe("");

@@ -11,11 +11,9 @@ import {
 import {Button, links as button } from "~/components/button/button";
 import { Thumbnail, links as thumbnail } from "~/components/thumbnail/thumbnail";
 import thumbnailImage from "../../public/assets/thumbnails/1998/regular/medium.jpg"
-import bookmarkImage from "../../public/assets/thumbnails/community-of-ours/regular/medium.jpg"
-import { Bookmark , links as bookmark} from "~/components/bookmark/bookmark";
 
 
-export const links = () => [...searchInputLinks(), ...bookmark(), ...emailInputStyles(), ...button(), ...thumbnail()];
+export const links = () => [...searchInputLinks(), ...emailInputStyles(), ...button(), ...thumbnail()];
 
 export default function Index() {
   return (
@@ -24,7 +22,6 @@ export default function Index() {
       <EmailInput />
       <Button buttonName="Button" />
       <Thumbnail image={thumbnailImage}/>
-      <Bookmark image={bookmarkImage} />
     </div>
   );
 }

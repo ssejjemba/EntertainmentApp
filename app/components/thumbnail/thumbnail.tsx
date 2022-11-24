@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import styles from "./styles.css"
 import playIcon from "../../../public/assets/iconPlay.svg"
+import idleBookmarkicon from "../../../public/assets/idle-bookmark--icon.svg"
 
 export const links = () => [{ rel: "stylesheet", href: styles }];
 
@@ -36,6 +37,8 @@ export const Thumbnail = (props : thumbnailProps)=>{
                 <p className="play_tag" >Play</p>
                 </div>)
             }
+
+       <img src={idleBookmarkicon} alt="" className='bookmark_icon' data-testid="bookmark_icon" />
 
         </div>
     )

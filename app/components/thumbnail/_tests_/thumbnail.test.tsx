@@ -32,23 +32,40 @@ render(<Thumbnail image = {testImage} />)
       render(<Thumbnail image = {testImage}  />)
       
       
-      fireEvent.mouseOver(screen.getByTestId('thumbnail'));
       
+      
+      
+      
+      
+      
+      
+      
+      
+      fireEvent.mouseOver(screen.getByTestId('thumbnail'));
+
       expect(screen.getByTestId('playIcon')).not.toBeInTheDocument
-
+      
+      expect(screen.getByTestId("bookmark_icon")).not.toBeInTheDocument
+      
       await waitFor(() => {
+
+        //test for Thumbnail Image
+      const iconImage = document.querySelector(".image") as HTMLImageElement;
+      expect(iconImage.src).toEqual("http://localhost/public/assets/iconPlay.svg")
+      expect(iconImage.alt).toEqual("thumbnail")
         
-        const playIcon =screen.getByTestId('playIcon')})
+        //tests for play Icon
+        const playIcon =screen.getByTestId('playIcon')
+        expect(playIcon).toBeInTheDocument
 
-        const iconImage = document.querySelector(".image") as HTMLImageElement;
-
-        expect(screen.getByTestId('playIcon')).toBeInTheDocument
-
+        //test for "Play" tag text
         expect(screen.getByText("Play")).toBeInTheDocument
 
-        expect(iconImage.src).toEqual("http://localhost/public/assets/iconPlay.svg")
 
-        expect(iconImage.alt).toEqual("thumbnail")
+        //tests for bookmark Icon
+        expect(screen.getByTestId("bookmark_icon")).toBeInTheDocument
+        expect(screen.getByTestId("bookmark_icon")).toBeInTheDocument
 
+      })
     })
 })
