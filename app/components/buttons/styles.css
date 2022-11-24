@@ -13,3 +13,25 @@
   background-color: var(--pure-white);
   color: var(--semi-dark-blue);
 }
+
+.play_control {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 19px;
+  background-color: rgba(255, 255, 255, 0.25);
+  padding: 9px 24px 9px 9px;
+  border-radius: 28.5px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  z-index: 3;
+}
+
+.play_icon {
+  fill: var(--pure-white);
+}
