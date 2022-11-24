@@ -9,6 +9,7 @@
     width: 255px;
     height: 174px;
     cursor: pointer;
+    transition: all 1s;
 }
 
 .play_icon--container{

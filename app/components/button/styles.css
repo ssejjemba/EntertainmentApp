@@ -1,19 +1,20 @@
 .primary_button{
     width: 336px;
     height: 48px;
-    background: #FC4747;
+    background:  var(--red);
     border-radius: 6px;
     font-weight: 300;
     font-size: 15px;
     line-height: 19px;
     text-align: center;
-    color: #FFFFFF;
+    color:  var(--pure-white);
     cursor: pointer;
     outline: none;
     border: none;
+    transition: all 0.5s;
 }
 
 .primary_button:hover{
     color: #161D2F;
-    background: #FFFFFF;
+    background: var(--pure-white);
 }
