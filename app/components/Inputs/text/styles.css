@@ -1,12 +1,6 @@
-<<<<<<< HEAD:app/components/Inputs/email/styles.css
-.email_container {
-  width: 33.6rem;
-=======
 .input_container {
-  width: 49rem;
->>>>>>> main:app/components/Inputs/text/styles.css
-  height: 3.7rem;
-  padding: 2px;
+  width: 40rem;
+  min-height: 3.7rem;
   border-bottom: 1px solid var(--greyish-blue);
   display: flex;
   flex-direction: row;
@@ -14,16 +8,12 @@
   justify-content: space-between;
 }
 
-<<<<<<< HEAD:app/components/Inputs/email/styles.css
-.email_input {
-=======
 .input_field {
-  margin: 1rem 0;
->>>>>>> main:app/components/Inputs/text/styles.css
   border: 0;
   padding: 0;
   display: inline-block;
   vertical-align: middle;
+  width: 60%;
   white-space: normal;
   background: none;
   appearance: textfield;
@@ -37,13 +27,8 @@
   outline: 0;
 }
 
-<<<<<<< HEAD:app/components/Inputs/email/styles.css
-.email_input:active,
-.email_input:focus .email_container {
-=======
-.input_field:active,
-.input_field:focus {
->>>>>>> main:app/components/Inputs/text/styles.css
+.input_container:active,
+.input_container:focus {
   border-bottom: 1px solid var(--pure-white);
 }
 
@@ -54,6 +39,6 @@
   opacity: 0.5;
 }
 
-.error-color {
+.error-message {
   color: var(--red);
 }

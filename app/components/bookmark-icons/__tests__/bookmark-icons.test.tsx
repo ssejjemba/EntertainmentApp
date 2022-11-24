@@ -5,7 +5,7 @@ import "@testing-library/jest-dom";
 
 describe("The Idle book-mark Icon will render successfully in the document", () => {
   test("ensure the Idle Icon is successfully being rendered in the App", () => {
-    render(<IdleIcon />);
+    render(<IdleIcon id="" />);
 
     const idleIcon = screen.getByTestId("idle-icon");
 
@@ -15,7 +15,7 @@ describe("The Idle book-mark Icon will render successfully in the document", () 
 
 describe("The Active book-mark Icon will render successfully in the document", () => {
   test("The Active Icon is successfully being rendered in the App", () => {
-    render(<ActiveIcon />);
+    render(<ActiveIcon id="" />);
     const activeIcon = screen.getByTestId("active-icon");
 
     expect(activeIcon).toBeInTheDocument();

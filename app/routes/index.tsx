@@ -7,7 +7,7 @@ import { validateEmail } from "~/utils/helper";
 
 import {
   TextInput,
-  links as emailInputStyles,
+  links as TextInputStyles,
 } from "~/components/Inputs/text/TextInput";
 
 import {
@@ -22,7 +22,7 @@ import {
 
 export const links = () => [
   ...searchInputLinks(),
-  ...emailInputStyles(),
+  ...TextInputStyles(),
   ...loginButtonStyles(),
   ...thumbnailStyles(),
 ];

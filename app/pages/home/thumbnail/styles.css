@@ -42,7 +42,7 @@
   stroke: var(--dark-blue);
 }
 
-.controls-wrapper {
+.play-control {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -56,7 +56,7 @@
   border-radius: 28.5px;
 }
 
-.hover-container {
+.controls-container {
   display: block;
   width: 40rem;
   height: 30rem;
@@ -69,6 +69,6 @@
   z-index: 8;
 }
 
-.thumbnail-container:hover .hover-container {
+.thumbnail-container:hover .controls-container {
   opacity: 1;
 }

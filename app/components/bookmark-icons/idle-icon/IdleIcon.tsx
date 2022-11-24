@@ -2,10 +2,11 @@
 
 type BookmarkIconProps = {
   className?: string;
+  id: string;
 };
-export const IdleIcon = ({ className }: BookmarkIconProps) => {
+export const IdleIcon = ({ className, id }: BookmarkIconProps) => {
   return (
-    <div className={className}>
+    <div className={className} data-testid={id}>
       <svg
         width="12"
         height="14"
