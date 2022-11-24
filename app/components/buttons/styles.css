@@ -35,3 +35,7 @@
 .play_icon {
   fill: var(--pure-white);
 }
+
+.button_text {
+  color: var(--pure-white);
+}
