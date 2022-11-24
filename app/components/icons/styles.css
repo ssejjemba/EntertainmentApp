@@ -17,4 +17,22 @@
 
 .icon {
   stroke: var(--pure-white);
+  fill: none;
+}
+
+.container:hover {
+  background: var(--pure-white);
+}
+
+.container:hover > .icon {
+  stroke: var(--dark-blue);
+}
+
+.active {
+  background: var(--dark-blue);
+}
+
+.active > .icon {
+  stroke: var(--pure-white);
+  fill: var(--pure-white);
 }
