@@ -17,10 +17,18 @@ export const Thumbnail = (props : thumbnailProps)=>{
     const [isHovering, setIsHovering] = useState(false);
 
     const handleMouseOver = () => {
+       document.querySelector(".container_bg")?.classList.add("overlay")
+
+       document.querySelector(".container_bg")?.classList.remove("hidden")
         setIsHovering(true);
       };
 
       const handleMouseOut = () => {
+
+        document.querySelector(".container_bg")?.classList.add("hidden")
+
+        document.querySelector(".container_bg")?.classList.remove("overlay")
+
         setIsHovering(false);
       };
 
@@ -39,7 +47,7 @@ export const Thumbnail = (props : thumbnailProps)=>{
             }
 
        <img src={idleBookmarkicon} alt="" className='bookmark_icon' data-testid="bookmark_icon" />
-
+<div className="container_bg hidden" ></div>
         </div>
     )
 }
