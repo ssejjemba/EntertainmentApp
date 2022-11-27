@@ -12,14 +12,14 @@ type ThumbnailProps = {
 };
 
 export const Thumbnail = ({ name, src }: ThumbnailProps) => {
-  const [bookmarked, setbookmarked] = useState(false);
+  const [IsBookmarked, setIsbookmarked] = useState(false);
   return (
     <div
       className="thumbnail-container"
       data-testid="thumbnail"
-      onClick={() => setbookmarked(true)}
+      onClick={() => setIsbookmarked(!IsBookmarked)}
     >
-      {bookmarked ? (
+      {IsBookmarked ? (
         <ActiveIcon
           className="bookmark-icon active-bookmark"
           id="active-bookmark"

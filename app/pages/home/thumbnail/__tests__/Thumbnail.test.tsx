@@ -23,16 +23,4 @@ describe("The Thumbnail component renders successfull in the document", () => {
 
     expect(playControl).toBeInTheDocument();
   });
-
-  test("The Thumbnail componet calls the onClick prop when clicked", async () => {
-    render(<Thumbnail src="" name="empty" />);
-
-    const thumbnail = screen.getByTestId("thumbnail");
-
-    const activeBookmark = screen.getByTestId("active-bookmark");
-
-    fireEvent.click(thumbnail);
-
-    await waitFor(() => expect(activeBookmark).toBeInTheDocument());
-  });
 });
