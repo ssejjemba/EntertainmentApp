@@ -1,4 +1,4 @@
-.thumbnail-container {
+.thumbnail_container {
   display: block;
   width: 40rem;
   height: 30rem;
@@ -40,35 +40,4 @@
 .idle-bookmark:hover {
   background-color: var(--pure-white);
   stroke: var(--dark-blue);
-}
-
-.play-control {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 19px;
-  background-color: rgba(255, 255, 255, 0.25);
-  padding: 9px 24px 9px 9px;
-  border-radius: 28.5px;
-}
-
-.controls-container {
-  display: block;
-  width: 40rem;
-  height: 30rem;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0;
-  transition: all 0.25s ease-out;
-  z-index: 8;
-}
-
-.thumbnail-container:hover .controls-container {
-  opacity: 1;
 }

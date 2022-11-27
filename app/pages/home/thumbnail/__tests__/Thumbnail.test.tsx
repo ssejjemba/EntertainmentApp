@@ -1,5 +1,5 @@
 import { Thumbnail } from "../Thumbnail";
-import { render, screen, fireEvent, waitFor } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
 // import userEvent from "@testing-library/user-event";
 
@@ -13,7 +13,7 @@ describe("The Thumbnail component renders successfull in the document", () => {
 
     const idleBookmark = screen.getByTestId("idle-bookmark");
 
-    const playControl = screen.getByTestId("play-control");
+    const playControl = screen.getByTestId("play_control");
 
     expect(thumbnail).toBeInTheDocument();
 
