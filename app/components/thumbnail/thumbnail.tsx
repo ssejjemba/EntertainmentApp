@@ -1,7 +1,12 @@
 import React, { useState } from "react"
 import styles from "./styles.css"
 import playIcon from "../../../public/assets/iconPlay.svg"
-import idleBookmarkicon from "../../../public/assets/idle-bookmark--icon.svg"
+
+
+import { IdleIcon } from "../../components/bookmark-icons/idle-icon/IdleIcon"
+import { ActiveIcon } from "../bookmark-icons/active-icon/ActiveIcon";
+
+
 
 export const links = () => [{ rel: "stylesheet", href: styles }];
 
@@ -15,6 +20,9 @@ export const Thumbnail = (props : thumbnailProps)=>{
     const {image} = props
 
     const [isHovering, setIsHovering] = useState(false);
+
+    const [bookmarked, setbookmarked] = useState(false);
+
 
     const handleMouseOver = () => {
        document.querySelector(".container_bg")?.classList.add("overlay")
@@ -35,7 +43,7 @@ export const Thumbnail = (props : thumbnailProps)=>{
      
 
     return(
-        <div data-testid = "thumbnail" className="thumbnail_container" onMouseOver={handleMouseOver} onMouseOut={handleMouseOut} >
+        <div data-testid = "thumbnail" className="thumbnail_container" onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}  onClick={()=>setbookmarked(!bookmarked)} >
             <img src={image} alt={image} className="thumbnail_image"  />
             {
                 isHovering&&(<div 
@@ -45,9 +53,11 @@ export const Thumbnail = (props : thumbnailProps)=>{
                 <p className="play_tag" >Play</p>
                 </div>)
             }
-
-       <img src={idleBookmarkicon} alt="" className='bookmark_icon' data-testid="bookmark_icon" />
-<div className="container_bg hidden" ></div>
+      { bookmarked? 
+      (<ActiveIcon className="bookmark" /> ): (<IdleIcon className='bookmark' data-testid="bookmark_icon" />) 
+}
+     
+       <div className="container_bg hidden" ></div>
         </div>
     )
 }

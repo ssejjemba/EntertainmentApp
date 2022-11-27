@@ -34,7 +34,7 @@ export const TextInput = React.forwardRef(
       <label className="input_container" htmlFor={props.id}>
         <input
           id="email"
-          className="input_field small_heading"
+          className="email_input small_heading"
           type={props.type}
           ref={innerRef}
           {...props}
