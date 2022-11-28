@@ -46,4 +46,12 @@
 
 .thumbnail_container:hover .controls_container {
   opacity: 1;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  z-index: 3;
+}
+
+.play_icon {
+  fill: var(--pure-white);
 }
