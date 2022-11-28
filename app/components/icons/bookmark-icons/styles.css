@@ -1,21 +1,3 @@
-.thumbnail_container {
-  display: block;
-  width: 40rem;
-  height: 30rem;
-  border-radius: 8px;
-  overflow: hidden;
-  position: relative;
-  margin-top: 5rem;
-  cursor: pointer;
-  z-index: 5;
-}
-
-.thumbnail-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
 .bookmark-icon {
   display: flex;
   justify-content: center;
@@ -31,13 +13,17 @@
   border-radius: 50%;
   cursor: pointer;
   z-index: 10;
-}
-
-.idle-bookmark {
+  fill: none;
   stroke: var(--pure-white);
 }
 
-.idle-bookmark:hover {
+.bookmark-icon:hover {
   background-color: var(--pure-white);
   stroke: var(--dark-blue);
+}
+
+.active {
+  background: var(--dark-blue);
+  stroke: var(--pure-white);
+  fill: var(--pure-white);
 }

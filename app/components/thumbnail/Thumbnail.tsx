@@ -1,6 +1,8 @@
 import React, { useState } from "react";
-import { IdleIcon } from "../../../components/bookmark-icons/idle-icon/IdleIcon";
-import { ActiveIcon } from "~/components/bookmark-icons/active-icon/ActiveIcon";
+import {
+  BookmarkIcon,
+  links as BookmarkStyles,
+} from "~/components/icons/bookmark-icons/BookmarkIcon";
 import {
   PlayButton,
   links as PlayButtonStyles,
@@ -10,6 +12,7 @@ import styles from "./styles.css";
 export const links = () => [
   { rel: "stylesheet", href: styles },
   ...PlayButtonStyles(),
+  ...BookmarkStyles(),
 ];
 
 type ThumbnailProps = {
@@ -26,18 +29,11 @@ export const Thumbnail = ({ name, src }: ThumbnailProps) => {
       data-testid="thumbnail"
       onClick={() => setIsbookmarked(!IsBookmarked)}
     >
-      {IsBookmarked ? (
-        <ActiveIcon
-          className="bookmark-icon active-bookmark"
-          id="active-bookmark"
-        />
-      ) : (
-        <IdleIcon className="bookmark-icon idle-bookmark" id="idle-bookmark" />
-      )}
+      <BookmarkIcon className={IsBookmarked ? "active" : ""} />
       <img
         alt={name}
         src={src}
-        className="thumbnail-img"
+        className="thumbnail_img"
         data-testid="thumbnail-img"
       />
       <PlayButton />

@@ -18,7 +18,7 @@ import {
 import {
   Thumbnail,
   links as thumbnailStyles,
-} from "~/pages/home/thumbnail/Thumbnail";
+} from "~/components/thumbnail/Thumbnail";
 
 export const links = () => [
   ...searchInputLinks(),
