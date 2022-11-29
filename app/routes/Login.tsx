@@ -43,7 +43,9 @@ export default function Login() {
           validationFn={validateEmail}
         />
         <TextInput id="password" type="password" placeholder="Password" />
-        <LoginButton>Login to your account</LoginButton>
+        <Link to="/home">
+          <LoginButton>Login to your account</LoginButton>
+        </Link>
         <Link to="/SignUp" className="link_text small_normal_text">
           <span className="login_span--main">Don’t have an account?</span>
           <span className="login_span--sub">SignUp</span>
