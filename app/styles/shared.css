@@ -155,11 +155,11 @@ body {
   padding: 32px;
 }
 
-.login_title {
+.form_title {
   margin-bottom: 4rem;
 }
 
-.signUp_link {
+.link_text {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -172,5 +172,18 @@ body {
 
 .signUp_link--exact {
   text-decoration: none;
+  color: var(--red);
+}
+
+.signUp_container {
+  width: 400px;
+  height: 440px;
+  background: var(--semi-dark-blue);
+  margin-top: 8.3rem;
+  border-radius: 20px;
+  padding: 32px;
+}
+
+.login_span--sub {
   color: var(--red);
 }
