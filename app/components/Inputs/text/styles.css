@@ -1,6 +1,7 @@
 .input_container {
-  width: 40rem;
+  width: 100%;
   min-height: 3.7rem;
+  margin-bottom: 2.4rem;
   border-bottom: 1px solid var(--greyish-blue);
   display: flex;
   flex-direction: row;
