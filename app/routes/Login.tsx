@@ -2,7 +2,6 @@ import {
   TextInput,
   links as TextInputStyles,
 } from "~/components/Inputs/text/TextInput";
-import styles from "./styles/styles.css";
 
 import {
   LoginButton,
@@ -11,13 +10,9 @@ import {
 
 import { validateEmail } from "~/utils/helper";
 
-export const links = () => [
-  { rel: "stylesheet", href: styles },
-  ...TextInputStyles(),
-  ...LoginButtonStyles(),
-];
+export const links = () => [...TextInputStyles(), ...LoginButtonStyles()];
 
-export default function Index() {
+export default function Login() {
   return (
     <div
       style={{
