@@ -1,0 +1,60 @@
+import {
+  TextInput,
+  links as TextInputStyles,
+} from "~/components/Inputs/text/TextInput";
+import styles from "./styles/styles.css";
+
+import {
+  LoginButton,
+  links as LoginButtonStyles,
+} from "~/components/buttons/LoginButton";
+
+import { validateEmail } from "~/utils/helper";
+
+export const links = () => [
+  { rel: "stylesheet", href: styles },
+  ...TextInputStyles(),
+  ...LoginButtonStyles(),
+];
+
+export default function Index() {
+  return (
+    <div
+      style={{
+        fontFamily: "system-ui, sans-serif",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+      }}
+    >
+      <div className="logo_box">
+        <svg
+          width="33"
+          height="27"
+          xmlns="http://www.w3.org/2000/svg"
+          className="logo"
+        >
+          <path d="m26.463.408 3.2 6.4h-4.8l-3.2-6.4h-3.2l3.2 6.4h-4.8l-3.2-6.4h-3.2l3.2 6.4h-4.8l-3.2-6.4h-1.6a3.186 3.186 0 0 0-3.184 3.2l-.016 19.2a3.2 3.2 0 0 0 3.2 3.2h25.6a3.2 3.2 0 0 0 3.2-3.2V.408h-6.4Z" />
+        </svg>
+      </div>
+      <div className="login_container">
+        <h2 className="large_heading login_title">Login</h2>
+        <TextInput
+          id="email"
+          type="email"
+          placeholder="Email address"
+          validationFn={validateEmail}
+        />
+        <TextInput id="password" type="password" placeholder="Password" />
+        <LoginButton>Login to your account</LoginButton>
+        <a href="#no_where" className="signUp_link small_normal_text">
+          <span>Don’t have an account?</span>
+          <a href="#no_where" className="small_normal_text signUp_link--exact">
+            Sign Up
+          </a>
+        </a>
+      </div>
+    </div>
+  );
+}

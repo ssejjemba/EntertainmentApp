@@ -45,13 +45,14 @@ describe("Email component tests", () => {
 
     const inputElement = screen.getByTestId("text-input");
 
+    const errorElement = screen.getByTestId("input-error");
+
     userEvent.type(inputElement, "anything");
 
-    const errorElement = screen.getByTestId("input-error");
+    expect(validateFunction).toBeCalledTimes(0);
 
     expect(errorElement).toBeInTheDocument();
 
-    expect(validateFunction).toBeCalledTimes(9);
     await waitFor(() => expect(errorElement.innerHTML).toBe("some error"));
   });
 });

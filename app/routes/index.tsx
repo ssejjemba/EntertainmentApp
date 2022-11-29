@@ -7,10 +7,25 @@ import { validateEmail } from "~/utils/helper";
 
 import {
   TextInput,
-  links as emailInputStyles,
+  links as TextInputStyles,
 } from "~/components/Inputs/text/TextInput";
 
-export const links = () => [...searchInputLinks(), ...emailInputStyles()];
+import {
+  LoginButton,
+  links as loginButtonStyles,
+} from "~/components/buttons/LoginButton";
+
+import {
+  Thumbnail,
+  links as thumbnailStyles,
+} from "~/components/thumbnail/Thumbnail";
+
+export const links = () => [
+  ...searchInputLinks(),
+  ...TextInputStyles(),
+  ...loginButtonStyles(),
+  ...thumbnailStyles(),
+];
 
 export default function Index() {
   return (
@@ -20,6 +35,13 @@ export default function Index() {
         type="email"
         placeholder="Email Address"
         validationFn={validateEmail}
+      />
+
+      <LoginButton>Login to your account</LoginButton>
+
+      <Thumbnail
+        name="earth"
+        src="assets/thumbnails/earths-untouched/regular/medium.jpg"
       />
     </div>
   );

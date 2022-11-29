@@ -1,0 +1,36 @@
+.logo_box {
+  margin-top: 5rem;
+}
+
+.logo {
+  fill: var(--red);
+}
+
+.login_container {
+  width: 400px;
+  height: 373px;
+  background: var(--semi-dark-blue);
+  margin-top: 8.3rem;
+  border-radius: 20px;
+  padding: 32px;
+}
+
+.login_title {
+  margin-bottom: 4rem;
+}
+
+.signUp_link {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2.4rem;
+  gap: 1rem;
+  text-decoration: none;
+  color: var(--pure-white);
+}
+
+.signUp_link--exact {
+  text-decoration: none;
+  color: var(--red);
+}

@@ -33,18 +33,17 @@ export const TextInput = React.forwardRef(
     return (
       <label className="input_container" htmlFor={props.id}>
         <input
-          id="email"
-          className="input_field small_heading"
+          id={props.id}
+          className="input_field small_normal_text"
           type={props.type}
           ref={innerRef}
-          {...props}
           placeholder={props.placeholder}
           required
           data-testid="text-input"
           onFocus={doValidation}
           onChange={doValidation}
         />
-        <span data-testid="input-error" className="text-message">
+        <span data-testid="input-error" className="error-message">
           {error}
         </span>
       </label>

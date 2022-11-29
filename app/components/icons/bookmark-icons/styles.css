@@ -1,0 +1,29 @@
+.bookmark-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  background: var(--dark-blue);
+  mix-blend-mode: normal;
+  opacity: 0.5;
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+  fill: none;
+  stroke: var(--pure-white);
+}
+
+.bookmark-icon:hover {
+  background-color: var(--pure-white);
+  stroke: var(--dark-blue);
+}
+
+.active {
+  background: var(--dark-blue);
+  stroke: var(--pure-white);
+  fill: var(--pure-white);
+}
