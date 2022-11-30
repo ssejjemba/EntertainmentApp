@@ -1,8 +1,7 @@
 import { useRef, useState } from "react";
-// import type { Movie } from "../../../typings";
-import Data from "../../../public/data.json";
 import styles from "./styles.css";
 import { Thumbnail, links as ThumbnailStyles } from "../thumbnail/Thumbnail";
+import { useMovieDataStore } from "~/store/data";
 
 export const links = () => [
   { rel: "stylesheet", href: styles },
@@ -13,6 +12,7 @@ export function Row(): JSX.Element {
   const rowRef = useRef<HTMLDivElement>(null);
 
   const [isMoved, setIsMoved] = useState(false);
+  const data = useMovieDataStore((state) => state.data);
 
   const handleClick = (direction: string) => {
     setIsMoved(true);
@@ -48,12 +48,14 @@ export function Row(): JSX.Element {
         </svg>
         <div ref={rowRef} className="row_movie">
           <>
-            {Data.map((movie) => {
+            {data.map((movie) => {
               return (
                 <Thumbnail
-                  key={Data.indexOf(movie)}
-                  name={movie.title}
-                  src={movie.thumbnail.regular.medium}
+                  key={movie.title}
+                  title={movie.title}
+                  medium={movie.thumbnail?.regular?.medium}
+                  large={movie.thumbnail?.regular?.large}
+                  small={movie.thumbnail?.regular?.small}
                 />
               );
             })}
