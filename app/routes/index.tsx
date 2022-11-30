@@ -1,5 +1,9 @@
-import { redirect } from "@remix-run/node";
+import { useEffect } from "react";
 
 export default function Index() {
-  return redirect("/SignUp");
+  useEffect(() => {
+    if (window.location) {
+      window.location.href = "/signUp";
+    }
+  });
 }
