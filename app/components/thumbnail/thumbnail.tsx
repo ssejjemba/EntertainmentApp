@@ -43,11 +43,9 @@ export const Thumbnail = (props: thumbnailProps) => {
     >
       <img src={image} alt={image} className="thumbnail_image" />
       {isHovering && (
-        <div className="overlay__bg">
-          <div data-testid="playIcon" className="play_icon--container">
-            <img src={playIcon} alt="thumbnail" className="image" />
-            <p className="play_tag">Play</p>
-          </div>
+        <div data-testid="playIcon" className="play_icon--container">
+          <img src={playIcon} alt="thumbnail" className="image" />
+          <p className="play_tag">Play</p>
         </div>
       )}
       {bookmarked ? (
