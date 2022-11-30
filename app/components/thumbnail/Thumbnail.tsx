@@ -18,7 +18,7 @@ export const links = () => [
 type ThumbnailProps = {
   children?: React.ReactNode;
   name: string;
-  src: string;
+  src: string | undefined;
 };
 
 export const Thumbnail = ({ name, src }: ThumbnailProps) => {
