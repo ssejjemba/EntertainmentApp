@@ -1,11 +1,11 @@
 import { Nav, links as NavigationStyles } from "~/components/nav/Navigation";
-import { Row, links as RowStyles } from "~/components/row/Row";
+import { Grid, links as gridStyles } from "~/components/row/Row";
 import styles from "../styles/home.css";
 
 export const links = () => [
   { rel: "stylesheet", href: styles },
   ...NavigationStyles(),
-  ...RowStyles(),
+  ...gridStyles(),
 ];
 
 export default function Home() {
@@ -13,7 +13,7 @@ export default function Home() {
     <div className="home_container">
       <Nav />
       <main>
-        <Row />
+        <Grid />
       </main>
     </div>
   );

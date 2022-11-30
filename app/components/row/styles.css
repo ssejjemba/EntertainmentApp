@@ -1,29 +1,9 @@
-.row {
+.grid {
   height: 40px;
   position: relative;
 }
 
-.row_icon {
-  position: absolute;
-  bottom: 0;
-  left: 2px;
-  top: 0;
-  z-index: 4;
-  cursor: pointer;
-  opacity: 0;
-  transition: hover 0.28s ease-out;
-}
-
-.row_icon:hover {
-  transform: scale(125);
-  opacity: 1;
-}
-
-.hidden {
-  opacity: 0;
-}
-
-.row_movie {
+.grid_movie {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
