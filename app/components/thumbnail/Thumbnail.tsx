@@ -3,10 +3,7 @@ import {
   BookmarkIcon,
   links as BookmarkStyles,
 } from "~/components/icons/bookmark-icons/BookmarkIcon";
-import {
-  PlayButton,
-  links as PlayButtonStyles,
-} from "~/components/buttons/PlayButton";
+import { PlayButton, links as PlayButtonStyles } from "../buttons/PlayButton";
 import styles from "./styles.css";
 
 export const links = () => [
@@ -17,11 +14,13 @@ export const links = () => [
 
 type ThumbnailProps = {
   children?: React.ReactNode;
-  name: string;
-  src: string | undefined;
+  title: string;
+  small?: string;
+  large?: string;
+  medium?: string;
 };
 
-export const Thumbnail = ({ name, src }: ThumbnailProps) => {
+export const Thumbnail = (props: ThumbnailProps) => {
   const [IsBookmarked, setIsbookmarked] = useState(false);
   return (
     <div
@@ -30,12 +29,16 @@ export const Thumbnail = ({ name, src }: ThumbnailProps) => {
       onClick={() => setIsbookmarked(!IsBookmarked)}
     >
       <BookmarkIcon className={IsBookmarked ? "active" : ""} />
-      <img
-        alt={name}
-        src={src}
-        className="thumbnail_img"
-        data-testid="thumbnail-img"
-      />
+      <picture>
+        <source media="(min-width:768px)" srcSet={props.large} />
+        <source media="(min-width:465px)" srcSet={props.medium} />
+        <img
+          alt={props.title}
+          src={props.small}
+          className="thumbnail_img"
+          data-testid="thumbnail-img"
+        />
+      </picture>
       <PlayButton />
     </div>
   );
