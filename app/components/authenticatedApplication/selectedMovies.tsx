@@ -3,10 +3,20 @@ import { Thumbnail } from '../thumbnail/thumbnail';
 import thumbnailDot from '../../../public/assets/thumbnailDot.svg';
 import { selectedMovies } from '~/utils/data';
 
-const moviesList = selectedMovies.map((item) => (
-  <div key={item.id} className="recommended_thumbnail--wrapper">
+//import data
+import { useMovieDataStore } from '~/store/data';
+
+const data = useMovieDataStore((state) => state.data);
+
+const moviesList = data.map((item) => (
+  <div key={item.title} className="recommended_thumbnail--wrapper">
     <div className="recommened_thumbnail--ImageContainer">
-      <Thumbnail image={item.src} />
+      <Thumbnail
+        medium={item.thumbnail?.regular?.medium}
+        large={item.thumbnail?.regular?.large}
+        small={item.thumbnail?.regular?.small}
+        title={item.title}
+      />
     </div>
     <div className="recommended_thumbnail">
       <div className="recommended_thumbnail--detailWrapper">

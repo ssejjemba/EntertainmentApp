@@ -8,11 +8,14 @@ import { ActiveIcon } from '../bookmark-icons/active-icon/ActiveIcon';
 export const links = () => [{ rel: 'stylesheet', href: styles }];
 
 type thumbnailProps = {
-  image: string;
+  title?: string;
+  small?: string;
+  medium?: string;
+  large?: string;
 };
 
 export const Thumbnail = (props: thumbnailProps) => {
-  const { image } = props;
+  const {} = props;
 
   const [isHovering, setIsHovering] = useState(false);
 
@@ -41,7 +44,17 @@ export const Thumbnail = (props: thumbnailProps) => {
       onMouseOut={handleMouseOut}
       onClick={() => setbookmarked(!bookmarked)}
     >
-      <img src={image} alt={image} className="thumbnail_image" />
+      <picture>
+        <source media="(min-width:768px)" srcSet={props.large} />
+        <source media="(min-width:465px)" srcSet={props.medium} />
+        <img
+          alt={props.title}
+          src={props.small}
+          className="thumbnail_image"
+          data-testid="thumbnail-img"
+        />
+      </picture>
+
       {isHovering && (
         <div data-testid="playIcon" className="play_icon--container">
           <img src={playIcon} alt="thumbnail" className="image" />
