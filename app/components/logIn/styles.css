@@ -1,0 +1,32 @@
+.logIn_container{
+    width: 400px;
+    min-height: 373px;
+    background: #161D2F;
+    border-radius: 20px;
+    display: flex;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.logIn_header{
+    font-weight: 300;
+    font-size: 32px;
+    line-height: 40px;
+    color: #FFFFFF;
+    margin-bottom: 16px;
+}
+
+.logIn_account--tag{
+    font-weight: 300;
+    font-size: 15px;
+    color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+}
+
+.signUp{
+    margin-left: 9px;
+    color: #FC4747;
+}

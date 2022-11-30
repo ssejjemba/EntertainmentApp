@@ -5,6 +5,9 @@
   align-items: center;
   justify-content: space-between;
   position: relative;
+}
+
+.input_container{
   border-bottom: 1px solid var(--greyish-blue);
 }
 
@@ -16,7 +19,6 @@
   background: none;
   color: var(--pure-white);
   caret-color: var(--red);
-  min-width: 36rem;
   max-height: 3.2rem;
   padding-bottom: 1.8rem;
   line-height: normal;

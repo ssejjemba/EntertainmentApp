@@ -1,0 +1,154 @@
+.authenticated_user {
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  gap: 32px;
+  background-color: var(--dark-blue);
+  padding: 32px;
+}
+
+.navigation_bar {
+  width: 96px;
+  height: 90vh;
+  background-color: var(--semi-dark-blue);
+  padding: 35px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 20px;
+}
+
+.category_icons--container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 300px;
+  width: 100px;
+}
+
+.logo {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.navigation_icons {
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.icon_button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.icon {
+  fill: var(--greyish-blue);
+}
+
+.active_icon {
+  fill: var(--pure-white);
+}
+
+.icon:hover {
+  fill: var(--red);
+}
+
+.active_icon:hover {
+  fill: var(--red);
+}
+
+.category_tag {
+  font-weight: 300;
+  font-size: 32px;
+  line-height: 40px;
+  letter-spacing: -0.5px;
+  color: #ffffff;
+  margin-top: 37px;
+  margin-bottom: 37px;
+}
+
+.thumbnail_wrapper {
+  width: 470px;
+  height: 230px;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+}
+
+.trending_movies--container {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  width: auto;
+  overflow: scroll;
+}
+
+.trending_movie--details {
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+}
+
+.trending_movie--detailsContainer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.trending_movie--detailTag {
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 19px;
+  color: #ffffff;
+}
+
+.trending_movie--name {
+  font-weight: 500;
+  font-size: 24px;
+}
+
+.recommended_thumbnail {
+  margin-top: 8px;
+}
+
+.recommended_thumbnail--detailWrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: center;
+}
+
+.recommended_List--container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 40px;
+  width: 1240px;
+  height: 226px;
+  padding-bottom: 55px;
+}
+
+.recommended_thumbnail--wrapper {
+  width: 280px;
+  height: 226px;
+  position: relative;
+}
+
+.recommened_thumbnail--ImageContainer {
+  height: 174px;
+}
+
+.recommended_thumbnail--detail {
+  font-weight: 300;
+  font-size: 13px;
+}
+
+.recommended_thumbnail--name {
+  font-weight: 500;
+  font-size: 18px;
+}

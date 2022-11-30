@@ -1,69 +1,73 @@
-.thumbnail_image{
-    width: 100%;
-    height: 100%;
-    border-radius: 8px;
+.thumbnail_image {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
 }
 
-.thumbnail_container{
-    margin: 0;
-    position: relative;
-    width: 255px;
-    height: 174px;
-    cursor: pointer;
-    transition: all 1s;
+.thumbnail_container {
+  margin: 0;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  transition: all 1s;
 }
 
-.bookmark{
-    stroke: var(--pure-white);
-    width: 32px;
-    height: 32px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: var( --dark-blue);
-    border-radius: 50%;
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    z-index: 2;
-
+.bookmark {
+  stroke: var(--pure-white);
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--dark-blue);
+  border-radius: 50%;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  z-index: 2;
 }
 
- .bookmark:hover{
-    stroke: var(--dark-blue);
-    background-color: var(--pure-white);
+.bookmark:hover {
+  stroke: var(--dark-blue);
+  background-color: var(--pure-white);
 }
 
-.play_icon--container{
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: #ffffff20;
-    border-radius: 28.5px;
-    padding: 4px 8px;
+.play_icon--container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #ffffff20;
+  border-radius: 28.5px;
+  padding: 4px 8px;
 }
 
-.play_tag{
-    font-weight: 500;
-    font-size: 18px;
-    color: #FFFFFF;
+.play_tag {
+  font-weight: 500;
+  font-size: 18px;
+  color: #ffffff;
 }
 
-.hidden{
-    display: none;
+.hidden {
+  display: none;
 }
 
-.overlay{
-    position: absolute;
-    top: 0;
-    left: 0;
-    
-    height: 100%;
-    width: 100%;
-    background-color: rgba(17, 17, 17, 0.305)
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  height: 100%;
+  width: 100%;
+  background-color: rgba(17, 17, 17, 0.305);
 }
 
+.overlay__bg {
+  background-color: red;
+  width: 100%;
+  height: 100%;
+}
