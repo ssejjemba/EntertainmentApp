@@ -12,7 +12,7 @@ export function Grid(): JSX.Element {
 
   return (
     <div className="grid">
-      <h1 className="grid_title large_heading">Trending</h1>
+      <h1 className="grid_title large_heading">Recommended for you</h1>
       <div className="grid_tiles">
         <div className="grid_movie">
           <>
