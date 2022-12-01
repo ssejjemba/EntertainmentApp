@@ -23,3 +23,31 @@
   height: 20rem;
   width: 100%;
 }
+
+@media screen and (max-width: 768px) {
+  .primary_nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    min-height: 2rem;
+    height: 100%;
+    background: var(--semi-dark-blue);
+    border-radius: 2rem;
+    margin: 3.2rem auto;
+    padding: 0rem 2rem;
+  }
+
+  .navigation_list {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    height: 100%;
+    width: 20rem;
+  }
+}

@@ -4,3 +4,9 @@
     calc(96px + (32px * 2))
     calc(100% - (96px + (32px * 2)));
 }
+
+@media screen and (max-width: 768px) {
+  .home_container {
+    grid-template-columns: 1fr;
+  }
+}
