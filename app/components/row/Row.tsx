@@ -13,22 +13,27 @@ export function Grid(): JSX.Element {
   return (
     <div className="grid">
       <h1 className="grid_title large_heading">Recommended for you</h1>
-      <div className="grid_tiles">
-        <div className="grid_movie">
-          <>
-            {data.map((movie) => {
-              return (
+
+      <div className="grid_movie_gallery">
+        <>
+          {data.map((movie) => {
+            return (
+              !movie.isTrending && (
                 <Thumbnail
                   key={movie.title}
                   title={movie.title}
                   medium={movie.thumbnail?.regular?.medium}
                   large={movie.thumbnail?.regular?.large}
                   small={movie.thumbnail?.regular?.small}
+                  year={movie.year}
+                  category={movie.category}
+                  rating={movie.rating}
+                  bookmarked={movie.isBookmarked}
                 />
-              );
-            })}
-          </>
-        </div>
+              )
+            );
+          })}
+        </>
       </div>
     </div>
   );
