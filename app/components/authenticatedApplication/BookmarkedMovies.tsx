@@ -6,14 +6,13 @@ import { Movie } from '~/store/data';
 
 type bookMarkedProps = {
   data: Movie[];
+  addBookmarkedData: (item: Movie) => void;
 };
 
 export const BookMarked = (props: bookMarkedProps) => {
-  const { data } = props;
+  const { data, addBookmarkedData } = props;
 
   const storeData = data;
-
-  const input = document.querySelector('.search_input');
 
   const bookmarkedMovieData = storeData.filter(
     (item) => item.isBookmarked && item.category === 'Movie',
@@ -37,6 +36,8 @@ export const BookMarked = (props: bookMarkedProps) => {
                   small={item.thumbnail?.regular?.small}
                   title={item.title}
                   bookmarked={item.isBookmarked}
+                  addBookmarkedData={addBookmarkedData}
+                  movie={item}
                 />
               </div>
               <div className="recommended_thumbnail">
@@ -69,6 +70,8 @@ export const BookMarked = (props: bookMarkedProps) => {
                   small={item.thumbnail?.regular?.small}
                   title={item.title}
                   bookmarked={item.isBookmarked}
+                  addBookmarkedData={addBookmarkedData}
+                  movie={item}
                 />
               </div>
               <div className="recommended_thumbnail">

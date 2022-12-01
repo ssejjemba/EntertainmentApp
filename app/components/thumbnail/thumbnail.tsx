@@ -4,6 +4,7 @@ import playIcon from '../../../public/assets/iconPlay.svg';
 
 import { IdleIcon } from '../../components/bookmark-icons/idle-icon/IdleIcon';
 import { ActiveIcon } from '../bookmark-icons/active-icon/ActiveIcon';
+import { Movie } from '~/store/data';
 
 export const links = () => [{ rel: 'stylesheet', href: styles }];
 
@@ -13,10 +14,12 @@ type thumbnailProps = {
   medium?: string;
   large?: string;
   bookmarked: boolean;
+  addBookmarkedData: (item: Movie) => void;
+  movie: Movie;
 };
 
 export const Thumbnail = (props: thumbnailProps) => {
-  const { bookmarked } = props;
+  const { bookmarked, addBookmarkedData, movie } = props;
 
   const [isHovering, setIsHovering] = useState(false);
 
@@ -37,15 +40,18 @@ export const Thumbnail = (props: thumbnailProps) => {
     setIsHovering(false);
   };
 
-  const addBookmarkedData = () => {};
-
   return (
     <div
       data-testid="thumbnail"
       className="thumbnail_container"
       onMouseOver={handleMouseOver}
       onMouseOut={handleMouseOut}
-      onClick={() => setbookmark(!bookmark)}
+      onClick={() => {
+        {
+          setbookmark(!bookmark);
+        }
+        addBookmarkedData(movie);
+      }}
     >
       <picture>
         <source media="(min-width:768px)" srcSet={props.large} />

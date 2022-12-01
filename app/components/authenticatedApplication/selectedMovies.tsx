@@ -7,10 +7,11 @@ import { Movie } from '~/store/data';
 
 type selectedMovieProps = {
   data: Movie[];
+  addBookmarkedData: (item: Movie) => void;
 };
 
 export const SelectedMovies = (props: selectedMovieProps) => {
-  const { data } = props;
+  const { data, addBookmarkedData } = props;
 
   const movieData = data.filter((movie) => movie.category === 'Movie');
 
@@ -28,6 +29,8 @@ export const SelectedMovies = (props: selectedMovieProps) => {
                   small={item.thumbnail?.regular?.small}
                   title={item.title}
                   bookmarked={item.isBookmarked}
+                  addBookmarkedData={addBookmarkedData}
+                  movie={item}
                 />
               </div>
               <div className="recommended_thumbnail">

@@ -6,10 +6,11 @@ import { Movie } from '~/store/data';
 
 type trendingMovieProps = {
   data: Movie[];
+  addBookmarkedData: (item: Movie) => void;
 };
 
 export const TrendingMovies = (props: trendingMovieProps) => {
-  const { data } = props;
+  const { data, addBookmarkedData } = props;
 
   const trendingMovieData = data.filter((item) => item.isTrending);
 
@@ -26,6 +27,8 @@ export const TrendingMovies = (props: trendingMovieProps) => {
                 small={item.thumbnail?.regular?.small}
                 title={item.title}
                 bookmarked={item.isBookmarked}
+                addBookmarkedData={addBookmarkedData}
+                movie={item}
               />
               <div className="trending_movie--details">
                 <div className="trending_movie--detailsContainer">

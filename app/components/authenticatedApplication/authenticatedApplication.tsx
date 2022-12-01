@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styles from './styles.css';
 
-import { useMovieDataStore } from '~/store/data';
+import { Movie, useMovieDataStore } from '~/store/data';
 
 import logo from '../../../public/assets/logo.svg';
 import avatar from '../../../public/assets/image-avatar.png';
@@ -44,6 +44,10 @@ export const AuthenticatedApplication = () => {
     return movie.title.toLowerCase().includes(searchField.toLowerCase());
   });
 
+  const addBookmarkedData = (item: Movie) => {
+    filteredData.push(item);
+  };
+
   const [category, setCategory] = useState('trending');
 
   let categories;
@@ -52,17 +56,17 @@ export const AuthenticatedApplication = () => {
     categories = (
       <>
         <div>
-          <TrendingMovies data={filteredData} />
-          <Recommended data={filteredData} />
+          <TrendingMovies data={filteredData} addBookmarkedData={addBookmarkedData} />
+          <Recommended data={filteredData} addBookmarkedData={addBookmarkedData} />
         </div>
       </>
     );
   } else if (category === 'movies') {
-    categories = <SelectedMovies data={filteredData} />;
+    categories = <SelectedMovies data={filteredData} addBookmarkedData={addBookmarkedData} />;
   } else if (category === 'series') {
-    categories = <SelectedTVSeries data={filteredData} />;
+    categories = <SelectedTVSeries data={filteredData} addBookmarkedData={addBookmarkedData} />;
   } else if (category === 'bookmark') {
-    categories = <BookMarked data={filteredData} />;
+    categories = <BookMarked data={filteredData} addBookmarkedData={addBookmarkedData} />;
   }
 
   return (
