@@ -17,6 +17,8 @@
 }
 
 .search_input[type="search"] {
+  appearance: textfield;
+  box-sizing: content-box;
   -webkit-appearance: textfield;
   -webkit-box-sizing: content-box;
 }
@@ -57,6 +59,7 @@
   display: flex;
   flex-direction: row;
   align-items: flex-start;
+  margin: 6.4rem 0 3.4rem;
 }
 
 .search_input::placeholder {
@@ -67,8 +70,8 @@
 }
 
 .search_icon {
-  width: 3.2rem;
-  height: 3.2rem;
+  width: 3rem;
+  height: 3rem;
   fill: var(--pure-white);
   margin-right: 2.4rem;
 }
