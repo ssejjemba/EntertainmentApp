@@ -2,14 +2,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 32px;
-  height: 32px;
+  width: 3.2rem;
+  height: 3.2rem;
   background: var(--dark-blue);
   mix-blend-mode: normal;
   opacity: 0.5;
   position: absolute;
-  top: 16px;
-  right: 16px;
+  top: 1.6rem;
+  right: 1.6rem;
   border-radius: 50%;
   cursor: pointer;
   z-index: 10;
