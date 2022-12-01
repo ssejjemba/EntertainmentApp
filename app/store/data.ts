@@ -7,6 +7,9 @@ export const useMovieDataStore = create<MovieStore>((set) => {
     getBookMarkedMovies: () => {
       return data.filter((movie) => movie.isBookmarked);
     },
+    getTrendingMovies: () => {
+      return data.filter((movie) => movie.isTrending);
+    },
   };
 });
 
