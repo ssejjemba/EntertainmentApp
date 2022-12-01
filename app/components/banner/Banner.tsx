@@ -12,7 +12,7 @@ export const links = () => [
   ...BookmarkStyles(),
 ];
 
-type ThumbnailProps = {
+type BannerProps = {
   children?: React.ReactNode;
   title: string;
   small?: string;
@@ -24,12 +24,12 @@ type ThumbnailProps = {
   bookmarked?: boolean;
 };
 
-export const Thumbnail = (props: ThumbnailProps) => {
+export const Banner = (props: BannerProps) => {
   const [IsBookmarked, setIsbookmarked] = useState(props.bookmarked);
   return (
     <div
-      className="thumbnail_container"
-      data-testid="thumbnail"
+      className="banner_container"
+      data-testid="banner"
       onClick={() => setIsbookmarked(!IsBookmarked)}
     >
       <BookmarkIcon className={IsBookmarked ? "active" : ""} />
@@ -39,17 +39,17 @@ export const Thumbnail = (props: ThumbnailProps) => {
         <img
           alt={props.title}
           src={props.small}
-          className="thumbnail_img"
-          data-testid="thumbnail-img"
+          className="banner_img"
+          data-testid="banner-img"
         />
       </picture>
-      <div className="controls_container--thumbnail">
+      <div className="controls_container--banner">
         <PlayButton />
       </div>
-      <div className="thumbnail_info">
-        <ul className="thumbnail_icons">
-          <li className="thumbnail_icons_year">{props.year}</li>
-          <li className="thumbnail_icons_category">
+      <div className="banner_info">
+        <ul className="banner_icons">
+          <li className="banner_icons_year">{props.year}</li>
+          <li className="banner_icons_category">
             {props.category === "Movie" ? (
               <div className="category_icon_box category_icon_box--movie">
                 <svg
@@ -76,9 +76,9 @@ export const Thumbnail = (props: ThumbnailProps) => {
               </div>
             )}
           </li>
-          <li className="thumbnail_icons_rating">{props.rating}</li>
+          <li className="banner_icons_rating">{props.rating}</li>
         </ul>
-        <h3 className="thumbnail_title extra_small_heading">{props.title}</h3>
+        <h3 className="banner_title extra_small_heading">{props.title}</h3>
       </div>
     </div>
   );

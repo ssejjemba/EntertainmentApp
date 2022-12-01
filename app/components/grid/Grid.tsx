@@ -1,25 +1,25 @@
 import styles from "./styles.css";
-import { Banner, links as BannerStyles } from "../banner/Banner";
+import { Thumbnail, links as ThumbnailStyles } from "../thumbnail/Thumbnail";
 import { useMovieDataStore } from "~/store/data";
 
 export const links = () => [
   { rel: "stylesheet", href: styles },
-  ...BannerStyles(),
+  ...ThumbnailStyles(),
 ];
 
-export function Row(): JSX.Element {
+export function Grid(): JSX.Element {
   const data = useMovieDataStore((state) => state.data);
 
   return (
-    <div className="row">
-      <h1 className="row_title large_heading">Trending</h1>
+    <div className="grid">
+      <h1 className="grid_title large_heading">Recommended for you</h1>
 
-      <div className="row_movie_container">
+      <div className="grid_movie_gallery">
         <>
           {data.map((movie) => {
             return (
-              movie.isTrending && (
-                <Banner
+              !movie.isTrending && (
+                <Thumbnail
                   key={movie.title}
                   title={movie.title}
                   medium={movie.thumbnail?.regular?.medium}
