@@ -17,7 +17,6 @@ type BannerProps = {
   title: string;
   small?: string;
   large?: string;
-  medium?: string;
   year?: number;
   category?: string;
   rating?: string;
@@ -35,7 +34,7 @@ export const Banner = (props: BannerProps) => {
       <BookmarkIcon className={IsBookmarked ? "active" : ""} />
       <picture>
         <source media="(min-width:768px)" srcSet={props.large} />
-        <source media="(min-width:465px)" srcSet={props.medium} />
+        <source media="(min-width:465px)" srcSet={props.small} />
         <img
           alt={props.title}
           src={props.small}

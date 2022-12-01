@@ -22,9 +22,8 @@ export function Row(): JSX.Element {
                 <Banner
                   key={movie.title}
                   title={movie.title}
-                  medium={movie.thumbnail?.regular?.medium}
-                  large={movie.thumbnail?.regular?.large}
-                  small={movie.thumbnail?.regular?.small}
+                  large={movie.thumbnail?.trending?.large}
+                  small={movie.thumbnail?.trending?.small}
                   year={movie.year}
                   category={movie.category}
                   rating={movie.rating}
