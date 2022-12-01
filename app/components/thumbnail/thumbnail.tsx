@@ -12,37 +12,25 @@ type thumbnailProps = {
   small?: string;
   medium?: string;
   large?: string;
+  bookmarked: boolean;
 };
 
 export const Thumbnail = (props: thumbnailProps) => {
-  const {} = props;
+  const { bookmarked } = props;
 
   const [isHovering, setIsHovering] = useState(false);
 
-  const [bookmarked, setbookmarked] = useState(false);
+  const [bookmark, setbookmark] = useState(bookmarked);
 
-  const handleMouseOver = () => {
-    document.querySelector('.container_bg')?.classList.add('overlay');
-
-    document.querySelector('.container_bg')?.classList.remove('hidden');
-    setIsHovering(true);
-  };
-
-  const handleMouseOut = () => {
-    document.querySelector('.container_bg')?.classList.add('hidden');
-
-    document.querySelector('.container_bg')?.classList.remove('overlay');
-
-    setIsHovering(false);
+  const addBookmarkedData = () => {
+    item.push;
   };
 
   return (
     <div
       data-testid="thumbnail"
       className="thumbnail_container"
-      onMouseOver={handleMouseOver}
-      onMouseOut={handleMouseOut}
-      onClick={() => setbookmarked(!bookmarked)}
+      onClick={() => setbookmark(!bookmark)}
     >
       <picture>
         <source media="(min-width:768px)" srcSet={props.large} />
@@ -61,7 +49,7 @@ export const Thumbnail = (props: thumbnailProps) => {
           <p className="play_tag">Play</p>
         </div>
       )}
-      {bookmarked ? (
+      {bookmark ? (
         <ActiveIcon className="bookmark" />
       ) : (
         <IdleIcon className="bookmark" data-testid="bookmark_icon" />

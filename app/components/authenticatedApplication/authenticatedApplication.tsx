@@ -13,6 +13,7 @@ import { Recommended } from './recommended';
 
 import { showActiveIcon } from '~/utils/helper';
 import { removeActiveIcon } from '~/utils/helper';
+import { BookMarked } from './BookmarkedMovies';
 
 export const links = () => [{ rel: 'stylesheet', href: styles }];
 
@@ -48,6 +49,8 @@ export const AuthenticatedApplication = () => {
     categories = <SelectedMovies />;
   } else if (category === 'series') {
     categories = <SelectedTVSeries />;
+  } else if (category === 'bookmark') {
+    categories = <BookMarked />;
   }
 
   return (
