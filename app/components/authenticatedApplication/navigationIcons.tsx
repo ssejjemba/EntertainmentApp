@@ -23,28 +23,32 @@ const showActiveIcon = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>):
 
   iconButton?.classList.add('active_icon');
   iconButton?.classList.remove('icon');
-
-  console.log(iconButton);
 };
 
-const listItems = icons.map((item) => (
-  <button
-    className="icon_button"
-    key={item.id}
-    onClick={(event: React.MouseEvent<HTMLButtonElement, MouseEvent>): void => {
-      setCategory(item.name);
-      showActiveIcon(event);
-    }}
-    id={item.id}
-  >
-    <item.icon className="icon" />
-  </button>
-));
+type navigationIconsProps = {
+  setCategory: (name: string) => {};
+};
 
-export const NavigationIcons = () => {
+export const NavigationIcons = (props: navigationIconsProps) => {
+  const { setCategory } = props;
+
   return (
     <div>
-      <div className="navigation_icons">{listItems}</div>
+      <div className="navigation_icons">
+        {icons.map((item) => (
+          <button
+            className="icon_button"
+            key={item.id}
+            onClick={(event: React.MouseEvent<HTMLButtonElement, MouseEvent>): void => {
+              setCategory(item.name);
+              showActiveIcon(event);
+            }}
+            id={item.id}
+          >
+            <item.icon className="icon" />
+          </button>
+        ))}
+      </div>
     </div>
   );
 };

@@ -2,19 +2,23 @@ import React from 'react';
 
 import { Thumbnail } from '../thumbnail/thumbnail';
 import thumbnailDot from '../../../public/assets/thumbnailDot.svg';
-import { useMovieDataStore } from '~/store/data';
+import { Movie } from '~/store/data';
 
-export const TrendingMovies = () => {
-  const storeData = useMovieDataStore((state) => state.data);
+type trendingMovieProps = {
+  data: Movie[];
+};
 
-  const data = storeData.filter((item) => item.isTrending);
+export const TrendingMovies = (props: trendingMovieProps) => {
+  const { data } = props;
+
+  const trendingMovieData = data.filter((item) => item.isTrending);
 
   return (
     <>
       <div>
         <p className="category_tag">Trending</p>
         <div className="trending_movies--container">
-          {data.map((item) => (
+          {trendingMovieData.map((item) => (
             <div key={item.title} className="thumbnail_wrapper">
               <Thumbnail
                 medium={item.thumbnail?.regular?.medium}

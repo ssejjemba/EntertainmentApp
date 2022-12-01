@@ -14,7 +14,6 @@ export const BookMarked = (props: bookMarkedProps) => {
   const storeData = data;
 
   const input = document.querySelector('.search_input');
-  console.log(input);
 
   const bookmarkedMovieData = storeData.filter(
     (item) => item.isBookmarked && item.category === 'Movie',

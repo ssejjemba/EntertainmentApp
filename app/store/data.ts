@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import create from 'zustand';
 import data from '../../public/data.json';
 

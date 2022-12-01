@@ -25,8 +25,6 @@ export const showActiveIcon = (event: React.MouseEvent<HTMLButtonElement, MouseE
 
   iconButton?.classList.add('active_icon');
   iconButton?.classList.remove('icon');
-
-  console.log(iconButton);
 };
 
 export const removeActiveIcon = () => {

@@ -36,15 +36,13 @@ export const AuthenticatedApplication = () => {
 
   //search functionality logic
 
-  const [searchField, setSearchField] = useState('');
+  const [searchField, setsearchfield] = useState('');
 
   const storeData = useMovieDataStore((state) => state.data);
 
   const filteredData = storeData.filter((movie) => {
     return movie.title.toLowerCase().includes(searchField.toLowerCase());
   });
-
-  console.log('data', filteredData);
 
   const [category, setCategory] = useState('trending');
 
@@ -54,7 +52,7 @@ export const AuthenticatedApplication = () => {
     categories = (
       <>
         <div>
-          <TrendingMovies />
+          <TrendingMovies data={filteredData} />
           <Recommended data={filteredData} />
         </div>
       </>
@@ -87,7 +85,7 @@ export const AuthenticatedApplication = () => {
         </div>
       </div>
       <div className="category_container">
-        <SearchInput searchFiled={searchField} setSearchField={setSearchField} />
+        <SearchInput searchFiled={searchField} setsearchfield={setsearchfield} />
         {categories}
       </div>
     </div>

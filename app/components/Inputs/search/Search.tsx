@@ -1,7 +1,6 @@
 import { ForwardedRef, useState } from 'react';
 import React from 'react';
 import styles from './styles.css';
-import { useMovieDataStore } from '~/store/data';
 
 export const links = () => [{ rel: 'stylesheet', href: styles }];
 
@@ -9,16 +8,16 @@ type SearchInputProps = {
   children?: React.ReactNode;
   id?: string;
   searchFiled: string;
-  setSearchField: (active: string) => void;
+  setsearchfield: (active: string) => void;
 };
 
 export const SearchInput = React.forwardRef(
   ({ children, ...props }: SearchInputProps, ref: ForwardedRef<HTMLInputElement>) => {
     //
-    const { searchFiled, setSearchField } = props;
+    const { setsearchfield } = props;
 
     const handleChange = (e: React.FormEvent<HTMLInputElement>) => {
-      setSearchField(e.currentTarget.value);
+      setsearchfield(e.currentTarget.value);
     };
 
     return (
