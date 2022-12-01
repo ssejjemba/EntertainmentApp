@@ -47,7 +47,7 @@ export const Thumbnail = (props: ThumbnailProps) => {
         <PlayButton />
       </div>
       <div className="thumbnail_info">
-        <ul className="thumbnail_icons">
+        <ul className="thumbnail_icons small_icon_text">
           <li className="thumbnail_icons_year">{props.year}</li>
           <li className="thumbnail_icons_category">
             {props.category === "Movie" ? (
