@@ -2,7 +2,7 @@
   display: block;
   width: 47rem;
   height: 23rem;
-  border-radius: 8px;
+  border-radius: 0.8rem;
   overflow: hidden;
   position: relative;
   cursor: pointer;
@@ -12,7 +12,7 @@
 .banner_img {
   width: 100%;
   height: 100%;
-  border-radius: 8px;
+  border-radius: 0.8px;
   object-fit: cover;
   background-repeat: no-repeat;
 }
@@ -20,7 +20,7 @@
 .banner_info {
   height: 6.8rem;
   width: 100%;
-  padding-left: 5px;
+  padding-left: 0.5rem;
   position: absolute;
   bottom: 0;
 }
@@ -31,16 +31,7 @@
   flex-direction: row;
   gap: 3rem;
   margin: 0;
-  padding: 8px 0 5px;
-
-  font-family: "Outfit";
-  font-style: normal;
-  font-weight: 300;
-  font-size: 13px;
-  line-height: 16px;
-  color: var(--pure-white);
-  mix-blend-mode: normal;
-  opacity: 0.75;
+  padding: 0.8rem 0 0.5rem;
 }
 
 .banner_icons_year {
@@ -65,7 +56,7 @@
 }
 
 .banner_title {
-  margin-top: 5px;
+  margin-top: 0.5rem;
 }
 
 .controls_container--banner {
@@ -74,7 +65,7 @@
   height: 100%;
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
   position: absolute;
-  border-radius: 8px;
+  border-radius: 0.8rem;
   top: 0;
   left: 0;
   opacity: 0;

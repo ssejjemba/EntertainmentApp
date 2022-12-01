@@ -46,7 +46,7 @@ export const Banner = (props: BannerProps) => {
         <PlayButton />
       </div>
       <div className="banner_info">
-        <ul className="banner_icons">
+        <ul className="banner_icons small_icon_text">
           <li className="banner_icons_year">{props.year}</li>
           <li className="banner_icons_category">
             {props.category === "Movie" ? (

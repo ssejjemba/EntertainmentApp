@@ -105,6 +105,17 @@ body {
   opacity: 0.75;
 }
 
+.small_icon_text {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 1.3rem;
+  line-height: 1.6rem;
+  color: var(--pure-white);
+  mix-blend-mode: normal;
+  opacity: 0.75;
+}
+
 .large_heading {
   font-family: "Outfit";
   font-style: normal;
