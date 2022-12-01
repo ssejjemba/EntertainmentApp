@@ -3,7 +3,7 @@
   outline: 0;
   background: var(--red);
   color: var(--pure-white);
-  border-radius: 6px;
+  border-radius: 0.6rem;
   margin-top: 2rem;
   padding: 1.4rem 9.7rem 1.5rem 9.6rem;
   cursor: pointer;
@@ -23,9 +23,9 @@
   justify-content: space-between;
   align-items: center;
   gap: 19px;
-  background-color: rgba(255, 255, 255, 0.25);
-  padding: 9px 24px 9px 9px;
-  border-radius: 28.5px;
+  background-color: var(--light-white);
+  padding: 0.9rem 2.4rem 0.9rem 0.9rem;
+  border-radius: 2.85rem;
   color: var(--pure-white);
   border: none;
   outline: none;

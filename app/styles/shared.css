@@ -6,6 +6,7 @@
   --greyish-blue: #5a698f;
   --semi-dark-blue: #161d2f;
   --pure-white: #ffffff;
+  --light-white: rgba(255, 255, 255, 0.25);
 }
 
 /* Box sizing rules */
