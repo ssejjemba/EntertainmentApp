@@ -22,14 +22,29 @@ export const Thumbnail = (props: thumbnailProps) => {
 
   const [bookmark, setbookmark] = useState(bookmarked);
 
-  const addBookmarkedData = () => {
-    item.push;
+  const handleMouseOver = () => {
+    document.querySelector('.container_bg')?.classList.add('overlay');
+
+    document.querySelector('.container_bg')?.classList.remove('hidden');
+    setIsHovering(true);
   };
+
+  const handleMouseOut = () => {
+    document.querySelector('.container_bg')?.classList.add('hidden');
+
+    document.querySelector('.container_bg')?.classList.remove('overlay');
+
+    setIsHovering(false);
+  };
+
+  const addBookmarkedData = () => {};
 
   return (
     <div
       data-testid="thumbnail"
       className="thumbnail_container"
+      onMouseOver={handleMouseOver}
+      onMouseOut={handleMouseOut}
       onClick={() => setbookmark(!bookmark)}
     >
       <picture>

@@ -55,12 +55,3 @@
 .hidden {
   display: none;
 }
-
-.overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background-color: rgba(17, 17, 17, 0.305);
-}
