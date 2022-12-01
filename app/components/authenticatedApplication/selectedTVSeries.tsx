@@ -2,10 +2,14 @@ import React from 'react';
 import { Thumbnail } from '../thumbnail/thumbnail';
 import thumbnailDot from '../../../public/assets/thumbnailDot.svg';
 
-import { useMovieDataStore } from '~/store/data';
+import { Movie } from '~/store/data';
 
-export const SelectedTVSeries = () => {
-  const data = useMovieDataStore((state) => state.data);
+type selectedTVSeriesProps = {
+  data: Movie[];
+};
+
+export const SelectedTVSeries = (props: selectedTVSeriesProps) => {
+  const { data } = props;
 
   const serieData = data.filter((serie) => serie.category === 'TV Series');
 

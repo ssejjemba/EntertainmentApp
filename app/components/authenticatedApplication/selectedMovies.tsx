@@ -3,10 +3,14 @@ import { Thumbnail } from '../thumbnail/thumbnail';
 import thumbnailDot from '../../../public/assets/thumbnailDot.svg';
 
 //import data
-import { useMovieDataStore } from '~/store/data';
+import { Movie } from '~/store/data';
 
-export const SelectedMovies = () => {
-  const data = useMovieDataStore((state) => state.data);
+type selectedMovieProps = {
+  data: Movie[];
+};
+
+export const SelectedMovies = (props: selectedMovieProps) => {
+  const { data } = props;
 
   const movieData = data.filter((movie) => movie.category === 'Movie');
 

@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import styles from './styles.css';
 
+import { useMovieDataStore } from '~/store/data';
+
 import logo from '../../../public/assets/logo.svg';
 import avatar from '../../../public/assets/image-avatar.png';
 
@@ -32,6 +34,18 @@ export const AuthenticatedApplication = () => {
     </button>
   ));
 
+  //search functionality logic
+
+  const [searchField, setSearchField] = useState('');
+
+  const storeData = useMovieDataStore((state) => state.data);
+
+  const filteredData = storeData.filter((movie) => {
+    return movie.title.toLowerCase().includes(searchField.toLowerCase());
+  });
+
+  console.log('data', filteredData);
+
   const [category, setCategory] = useState('trending');
 
   let categories;
@@ -41,16 +55,16 @@ export const AuthenticatedApplication = () => {
       <>
         <div>
           <TrendingMovies />
-          <Recommended />
+          <Recommended data={filteredData} />
         </div>
       </>
     );
   } else if (category === 'movies') {
-    categories = <SelectedMovies />;
+    categories = <SelectedMovies data={filteredData} />;
   } else if (category === 'series') {
-    categories = <SelectedTVSeries />;
+    categories = <SelectedTVSeries data={filteredData} />;
   } else if (category === 'bookmark') {
-    categories = <BookMarked />;
+    categories = <BookMarked data={filteredData} />;
   }
 
   return (
@@ -73,7 +87,7 @@ export const AuthenticatedApplication = () => {
         </div>
       </div>
       <div className="category_container">
-        <SearchInput />
+        <SearchInput searchFiled={searchField} setSearchField={setSearchField} />
         {categories}
       </div>
     </div>

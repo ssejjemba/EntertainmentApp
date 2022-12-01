@@ -3,10 +3,14 @@ import React from 'react';
 import { Thumbnail } from '../thumbnail/thumbnail';
 import thumbnailDot from '../../../public/assets/thumbnailDot.svg';
 
-import { useMovieDataStore } from '~/store/data';
+import { Movie } from '~/store/data';
 
-export const Recommended = () => {
-  const data = useMovieDataStore((state) => state.data);
+type recommendedProps = {
+  data: Movie[];
+};
+
+export const Recommended = (props: recommendedProps) => {
+  const { data } = props;
 
   return (
     <>

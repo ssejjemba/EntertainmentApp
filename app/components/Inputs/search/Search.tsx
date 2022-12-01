@@ -1,19 +1,26 @@
-import type { ForwardedRef } from "react";
-import React from "react";
-import styles from "./styles.css";
+import { ForwardedRef, useState } from 'react';
+import React from 'react';
+import styles from './styles.css';
+import { useMovieDataStore } from '~/store/data';
 
-export const links = () => [{ rel: "stylesheet", href: styles }];
+export const links = () => [{ rel: 'stylesheet', href: styles }];
 
 type SearchInputProps = {
   children?: React.ReactNode;
   id?: string;
+  searchFiled: string;
+  setSearchField: (active: string) => void;
 };
 
 export const SearchInput = React.forwardRef(
-  (
-    { children, ...props }: SearchInputProps,
-    ref: ForwardedRef<HTMLInputElement>
-  ) => {
+  ({ children, ...props }: SearchInputProps, ref: ForwardedRef<HTMLInputElement>) => {
+    //
+    const { searchFiled, setSearchField } = props;
+
+    const handleChange = (e: React.FormEvent<HTMLInputElement>) => {
+      setSearchField(e.currentTarget.value);
+    };
+
     return (
       <label className="search_container" htmlFor={props.id}>
         <svg
@@ -38,9 +45,10 @@ export const SearchInput = React.forwardRef(
           ref={ref}
           data-search-input
           placeholder="Search for movies or TV series"
+          onChange={handleChange}
         />
       </label>
     );
-  }
+  },
 );
-SearchInput.displayName = "Search Input";
+SearchInput.displayName = 'Search Input';

@@ -1,4 +1,5 @@
 import Errors from '~/constants/errors';
+import { useMovieDataStore } from '~/store/data';
 
 export function validateEmail(email: string): string {
   if (!email) {
@@ -34,3 +35,5 @@ export const removeActiveIcon = () => {
   formerActiveIcon?.classList.remove('active_icon');
   formerActiveIcon?.classList.add('icon');
 };
+
+//data

@@ -2,10 +2,19 @@ import React from 'react';
 
 import { Thumbnail } from '../thumbnail/thumbnail';
 import thumbnailDot from '../../../public/assets/thumbnailDot.svg';
-import { useMovieDataStore } from '~/store/data';
+import { Movie } from '~/store/data';
 
-export const BookMarked = () => {
-  const storeData = useMovieDataStore((state) => state.data);
+type bookMarkedProps = {
+  data: Movie[];
+};
+
+export const BookMarked = (props: bookMarkedProps) => {
+  const { data } = props;
+
+  const storeData = data;
+
+  const input = document.querySelector('.search_input');
+  console.log(input);
 
   const bookmarkedMovieData = storeData.filter(
     (item) => item.isBookmarked && item.category === 'Movie',
