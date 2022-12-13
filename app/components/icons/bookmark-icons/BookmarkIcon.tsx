@@ -8,7 +8,7 @@ type BookmarkIconProps = {
 
 export const BookmarkIcon = ({ className }: BookmarkIconProps) => {
   return (
-    <div className={`bookmark-icon ${className}`}>
+    <div data-testid="bookmark-icon" className={`bookmark-icon ${className}`}>
       <svg
         width="12"
         height="14"

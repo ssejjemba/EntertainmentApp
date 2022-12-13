@@ -5,21 +5,21 @@ import "@testing-library/jest-dom";
 
 describe("The Thumbnail component renders successfull in the document", () => {
   test("The Thumbnail component is mounted well on App render", () => {
-    render(<Thumbnail src="" name="empty" />);
+    render(<Thumbnail title="movie_title" />);
 
     const thumbnail = screen.getByTestId("thumbnail");
 
     const thumbnailImg = screen.getByTestId("thumbnail-img");
 
-    const idleBookmark = screen.getByTestId("idle-bookmark");
+    const BookmarkIcon = screen.getByTestId("bookmark-icon");
 
-    const playControl = screen.getByTestId("play_control");
+    const playControl = screen.getByTestId("play-control");
 
     expect(thumbnail).toBeInTheDocument();
 
     expect(thumbnailImg).toBeInTheDocument();
 
-    expect(idleBookmark).toBeInTheDocument();
+    expect(BookmarkIcon).toBeInTheDocument();
 
     expect(playControl).toBeInTheDocument();
   });
