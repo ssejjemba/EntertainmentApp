@@ -20,7 +20,7 @@ export default function Home() {
   const [movieCategory, setMovieCategory] = useState("home");
   return (
     <div className="home_container">
-      <Nav />
+      <Nav movieCategory={movieCategory} setMovieCategory={setMovieCategory} />
       <main>
         <SearchInput />
         <Row />
