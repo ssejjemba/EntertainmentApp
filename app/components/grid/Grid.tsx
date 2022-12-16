@@ -9,7 +9,7 @@ export const links = () => [
 
 type GridProps = {
   movieCategory: string;
-  setMovieCategory: (movieCategory: string) => void;
+  setMovieCategory?: (movieCategory: string) => void;
 };
 
 export function Grid({
@@ -31,9 +31,9 @@ export function Grid({
               }
 
               if (movie.category === movieCategory) {
-                console.log(movieCategory);
                 return movie;
               }
+
               return "";
             })
             .map((movie) => {

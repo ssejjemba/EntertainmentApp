@@ -5,6 +5,8 @@ export const links = () => [{ rel: "stylesheet", href: styles }];
 type NavProps = {
   movieCategory: string;
   setMovieCategory: (movieCategory: string) => void;
+  IsBookmarked: boolean;
+  setIsBookmarked: (IsBookmarked: boolean) => void;
 };
 
 export const Nav = ({ movieCategory, setMovieCategory }: NavProps) => {
