@@ -4,8 +4,7 @@
   align-items: center;
   justify-content: space-between;
   width: 9.6rem;
-  min-height: 100vh;
-  height: 100%;
+  height: 96rem;
   background: var(--semi-dark-blue);
   border-radius: 2rem;
   margin: 3.2rem;
