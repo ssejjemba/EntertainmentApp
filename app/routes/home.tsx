@@ -25,7 +25,10 @@ export default function Home() {
       <main>
         <SearchInput />
         <Row />
-        <Grid />
+        <Grid
+          movieCategory={movieCategory}
+          setMovieCategory={setMovieCategory}
+        />
       </main>
     </div>
   );

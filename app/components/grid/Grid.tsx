@@ -7,7 +7,15 @@ export const links = () => [
   ...ThumbnailStyles(),
 ];
 
-export function Grid(): JSX.Element {
+type GridProps = {
+  movieCategory: string;
+  setMovieCategory: (movieCategory: string) => void;
+};
+
+export function Grid({
+  movieCategory,
+  setMovieCategory,
+}: GridProps): JSX.Element {
   const data = useMovieDataStore((state) => state.data);
 
   return (
