@@ -18,7 +18,6 @@ export const links = () => [
 
 export default function Home() {
   const [movieCategory, setMovieCategory] = useState("");
-  console.log(movieCategory);
   return (
     <div className="home_container">
       <Nav movieCategory={movieCategory} setMovieCategory={setMovieCategory} />

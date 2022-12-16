@@ -25,7 +25,7 @@ export const Nav = ({ movieCategory, setMovieCategory }: NavProps) => {
         <li className="navation_item">
           <button
             className="navigation_btn"
-            onClick={() => setMovieCategory((movieCategory = "home"))}
+            onClick={() => setMovieCategory((movieCategory = ""))}
           >
             <svg width="20" height="20" xmlns="http://www.w3.org/2000/svg">
               <path
@@ -38,7 +38,7 @@ export const Nav = ({ movieCategory, setMovieCategory }: NavProps) => {
         <li className="navation_item">
           <button
             className="navigation_btn"
-            onClick={() => setMovieCategory((movieCategory = "movies"))}
+            onClick={() => setMovieCategory((movieCategory = "Movie"))}
           >
             <svg width="20" height="20" xmlns="http://www.w3.org/2000/svg">
               <path
@@ -51,7 +51,7 @@ export const Nav = ({ movieCategory, setMovieCategory }: NavProps) => {
         <li className="navation_item">
           <button
             className="navigation_btn"
-            onClick={() => setMovieCategory((movieCategory = "tv-series"))}
+            onClick={() => setMovieCategory((movieCategory = "TV Series"))}
           >
             <svg width="20" height="20" xmlns="http://www.w3.org/2000/svg">
               <path

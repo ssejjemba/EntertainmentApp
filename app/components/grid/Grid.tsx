@@ -24,23 +24,35 @@ export function Grid({
 
       <div className="grid_movie_gallery">
         <>
-          {data.map((movie) => {
-            return (
-              !movie.isTrending && (
-                <Thumbnail
-                  key={movie.title}
-                  title={movie.title}
-                  medium={movie.thumbnail?.regular?.medium}
-                  large={movie.thumbnail?.regular?.large}
-                  small={movie.thumbnail?.regular?.small}
-                  year={movie.year}
-                  category={movie.category}
-                  rating={movie.rating}
-                  bookmarked={movie.isBookmarked}
-                />
-              )
-            );
-          })}
+          {data
+            .filter((movie) => {
+              if (movieCategory === "") {
+                return movie;
+              }
+
+              if (movie.category === movieCategory) {
+                console.log(movieCategory);
+                return movie;
+              }
+              return "";
+            })
+            .map((movie) => {
+              return (
+                !movie.isTrending && (
+                  <Thumbnail
+                    key={movie.title}
+                    title={movie.title}
+                    medium={movie.thumbnail?.regular?.medium}
+                    large={movie.thumbnail?.regular?.large}
+                    small={movie.thumbnail?.regular?.small}
+                    year={movie.year}
+                    category={movie.category}
+                    rating={movie.rating}
+                    bookmarked={movie.isBookmarked}
+                  />
+                )
+              );
+            })}
         </>
       </div>
     </div>
