@@ -9,7 +9,11 @@ type NavProps = {
   setIsBookmarked: (IsBookmarked: boolean) => void;
 };
 
-export const Nav = ({ movieCategory, setMovieCategory }: NavProps) => {
+export const Nav = ({
+  movieCategory,
+  setMovieCategory,
+  ...props
+}: NavProps) => {
   return (
     <nav className="primary_nav">
       <div className="logo_box--nav">
@@ -66,7 +70,7 @@ export const Nav = ({ movieCategory, setMovieCategory }: NavProps) => {
         <li className="navation_item">
           <button
             className="navigation_btn"
-            onClick={() => setMovieCategory((movieCategory = "bookmarked"))}
+            onClick={() => props.setIsBookmarked(!props.IsBookmarked)}
           >
             <svg width="17" height="20" xmlns="http://www.w3.org/2000/svg">
               <path
