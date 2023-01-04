@@ -31,13 +31,21 @@
   cursor: pointer;
 }
 
+.navigation_link svg {
+  fill: var(--greyish-blue);
+}
+
+.navigation_link:hover svg {
+  fill: var(--red);
+}
+
 @media screen and (max-width: 768px) {
   .primary_nav {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    width: 100%;
+    width: 90%;
     min-height: 2rem;
     height: 100%;
     background: var(--semi-dark-blue);
