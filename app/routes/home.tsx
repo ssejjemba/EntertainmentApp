@@ -30,7 +30,7 @@ export default function Home() {
       <main>
         <SearchInput />
         <Row />
-        <Grid movieCategory={movieCategory} />
+        <Grid movieCategory={movieCategory} IsBookmarked={IsBookmarked} />
       </main>
     </div>
   );
