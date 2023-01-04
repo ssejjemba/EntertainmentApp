@@ -18,19 +18,13 @@ export const links = () => [
 
 export default function Home() {
   const [movieCategory, setMovieCategory] = useState("");
-  const [IsBookmarked, setIsbookmarked] = useState(false);
   return (
     <div className="home_container">
-      <Nav
-        movieCategory={movieCategory}
-        setMovieCategory={setMovieCategory}
-        IsBookmarked={IsBookmarked}
-        setIsBookmarked={setIsbookmarked}
-      />
+      <Nav movieCategory={movieCategory} setMovieCategory={setMovieCategory} />
       <main>
         <SearchInput />
         <Row />
-        <Grid movieCategory={movieCategory} IsBookmarked={IsBookmarked} />
+        <Grid movieCategory={movieCategory} />
       </main>
     </div>
   );

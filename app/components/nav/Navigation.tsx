@@ -5,8 +5,8 @@ export const links = () => [{ rel: "stylesheet", href: styles }];
 type NavProps = {
   movieCategory: string;
   setMovieCategory: (movieCategory: string) => void;
-  IsBookmarked: boolean;
-  setIsBookmarked: (IsBookmarked: boolean) => void;
+  // IsBookmarked: boolean;
+  // setIsBookmarked: (IsBookmarked: boolean) => void;
 };
 
 export const Nav = ({
@@ -70,7 +70,7 @@ export const Nav = ({
         <li className="navation_item">
           <button
             className="navigation_btn"
-            onClick={() => props.setIsBookmarked(!props.IsBookmarked)}
+            // onClick={() => props.setIsBookmarked(!props.IsBookmarked)}
           >
             <svg width="17" height="20" xmlns="http://www.w3.org/2000/svg">
               <path

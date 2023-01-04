@@ -1,20 +1,6 @@
 import create from "zustand";
 import data from "../../public/data.json";
 
-export const useMovieDataStore = create<MovieStore>((set) => {
-  return {
-    data,
-    getBookmarkedMovies: () => {
-      return data.filter((movie) => movie.isBookmarked === true);
-    },
-  };
-});
-
-interface MovieStore {
-  data: Movie[];
-  getBookmarkedMovies: () => Movie[];
-}
-
 interface Trending {
   small: string;
   large: string;
@@ -40,3 +26,16 @@ interface Movie {
   isBookmarked: boolean;
   isTrending: boolean;
 }
+
+interface MovieStore {
+  data: Movie[];
+  getBookmarkedMovies: () => Movie[];
+}
+export const useMovieDataStore = create<MovieStore>((set) => {
+  return {
+    data,
+    getBookmarkedMovies: () => {
+      return data.filter((movie) => movie.isBookmarked === true);
+    },
+  };
+});

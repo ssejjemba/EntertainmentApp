@@ -9,10 +9,10 @@ export const links = () => [
 
 type GridProps = {
   movieCategory: string;
-  IsBookmarked: boolean;
+  // IsBookmarked: boolean;
 };
 
-export function Grid({ movieCategory, IsBookmarked }: GridProps): JSX.Element {
+export function Grid({ movieCategory }: GridProps): JSX.Element {
   const data = useMovieDataStore((state) => state.data);
 
   return (
@@ -34,11 +34,8 @@ export function Grid({ movieCategory, IsBookmarked }: GridProps): JSX.Element {
               return "";
             })
             .map((movie) => {
-              console.log(IsBookmarked);
               return (
-                (IsBookmarked
-                  ? !movie.isTrending && movie.isBookmarked
-                  : !movie.isTrending && !movie.isBookmarked) && (
+                !movie.isTrending && (
                   <Thumbnail
                     key={movie.title}
                     title={movie.title}
