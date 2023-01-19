@@ -35,6 +35,8 @@ type State = {
   tvShows: Movie[];
   movies: Movie[];
   textFilteredData: Movie[];
+  trendingMovies: Movie[];
+  showTrendingMovies: boolean;
 };
 
 type Actions = {
@@ -66,6 +68,12 @@ export const useMovieDataStore = create<State & Actions>((set) => {
       return data.filter((movie) =>
         movie.title.includes(this.activeFilterText)
       );
+    },
+    get showTrendingMovies() {
+      return this.activeFilter === "text";
+    },
+    get trendingMovies() {
+      return data.filter((movie) => movie.isTrending);
     },
     toggleBookmark(title: string) {
       const movie = data.find((movie) => movie.title === title);
