@@ -25,14 +25,19 @@ export const links = () => [
 
 export default function Home() {
   const [movieCategory, setMovieCategory] = useState("");
-  const { currentData, activeFilterText, setActiveFilterText } =
-    useMovieDataStore((state) => state);
+  const {
+    currentData,
+    activeFilterText,
+    setActiveFilterText,
+    showTrendingMovies,
+    trendingMovies,
+  } = useMovieDataStore((state) => state);
   return (
     <div className="home_container">
       <Nav movieCategory={movieCategory} setMovieCategory={setMovieCategory} />
       <main>
         <SearchInput value={activeFilterText} onChange={setActiveFilterText} />
-        <TrendingMovies />
+        {showTrendingMovies && <TrendingMovies movies={trendingMovies} />}
         <MovieList movies={currentData} />
       </main>
     </div>

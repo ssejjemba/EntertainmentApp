@@ -70,7 +70,7 @@ export const useMovieDataStore = create<State & Actions>((set) => {
       );
     },
     get showTrendingMovies() {
-      return this.activeFilter === "text";
+      return this.activeFilter === "text" && !this.activeFilterText;
     },
     get trendingMovies() {
       return data.filter((movie) => movie.isTrending);
