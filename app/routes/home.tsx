@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Nav, links as NavigationStyles } from "~/components/nav/Navigation";
 import {
   TrendingMovies,
@@ -13,6 +14,7 @@ import {
 } from "~/components/Inputs/search/Search";
 import styles from "../styles/home.css";
 import { useMovieDataStore } from "~/store/data";
+import { FILTERS } from "~/constants/constants";
 
 export const links = () => [
   { rel: "stylesheet", href: styles },
@@ -24,7 +26,7 @@ export const links = () => [
 
 export default function Home() {
   const {
-    currentData,
+    activeData,
     activeFilterText,
     activeFilter,
     setActiveFilter,
@@ -32,13 +34,23 @@ export default function Home() {
     showTrendingMovies,
     trendingMovies,
   } = useMovieDataStore((state) => state);
+  useEffect(() => {
+    setActiveFilter(FILTERS.TEXT);
+    setActiveFilterText("");
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   return (
     <div className="home_container">
       <Nav movieCategory={activeFilter} setMovieCategory={setActiveFilter} />
       <main>
-        <SearchInput value={activeFilterText} onChange={setActiveFilterText} />
+        {activeFilter === FILTERS.TEXT && (
+          <SearchInput
+            value={activeFilterText}
+            onChange={setActiveFilterText}
+          />
+        )}
         {showTrendingMovies && <TrendingMovies movies={trendingMovies} />}
-        <MovieList movies={currentData} />
+        <MovieList movies={activeData} />
       </main>
     </div>
   );

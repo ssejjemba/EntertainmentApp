@@ -29,13 +29,9 @@ export interface Movie {
 }
 
 type State = {
-  currentData: Movie[];
+  activeData: Movie[];
   activeFilter: string;
   activeFilterText: string;
-  bookmarkedMovies: Movie[];
-  tvShows: Movie[];
-  movies: Movie[];
-  textFilteredData: Movie[];
   trendingMovies: Movie[];
   showTrendingMovies: boolean;
 };
@@ -45,33 +41,55 @@ type Actions = {
   setActiveFilterText: (text: string) => void;
 };
 
+function getCurrentData(newFilter: string, newFilterText?: string) {
+  if (newFilter === FILTERS.BOOKMARKED) {
+    return data.filter((movie) => movie.isBookmarked === true);
+  }
+
+  if (newFilter === FILTERS.TV_SHOWS) {
+    return data.filter((movie) => movie.category === "TV Series");
+  }
+
+  if (newFilter === FILTERS.MOVIES) {
+    return data.filter((movie) => movie.category === "Movie");
+  }
+
+  if (!newFilterText) {
+    return data;
+  }
+
+  return data.filter((movie) => movie.title.includes(newFilterText));
+}
+
 export const useMovieDataStore = create<State & Actions>((set) => {
   return {
     activeFilter: FILTERS.TEXT,
     activeFilterText: "",
-    setActiveFilter: (filter: string) =>
-      set((state) => ({ activeFilter: filter })),
-    setActiveFilterText: (text: string) =>
-      set((state) => ({ activeFilterText: text })),
-    get bookmarkedMovies() {
-      return data.filter((movie) => movie.isBookmarked === true);
-    },
-    get tvShows() {
-      return data.filter((movie) => movie.category === "TV Series");
-    },
-    get movies() {
-      return data.filter((movie) => movie.category === "Movie");
-    },
-    get textFilteredData() {
-      if (!this.activeFilterText) {
-        return data;
+    activeData: [],
+    showTrendingMovies: true,
+    setActiveFilter(filter: string) {
+      const _data = getCurrentData(filter);
+      let showTrends = false;
+      if (filter === FILTERS.TEXT) {
+        showTrends = true;
       }
-      return data.filter((movie) =>
-        movie.title.includes(this.activeFilterText)
-      );
+      set((state) => ({
+        activeFilter: filter,
+        activeData: _data,
+        showTrendingMovies: showTrends,
+      }));
     },
-    get showTrendingMovies() {
-      return this.activeFilter === "text" && !this.activeFilterText;
+    setActiveFilterText(text: string) {
+      const _data = getCurrentData(FILTERS.TEXT, text);
+      let showTrends = false;
+      if (text === "") {
+        showTrends = true;
+      }
+      set((state) => ({
+        activeFilterText: text,
+        activeData: _data,
+        showTrendingMovies: showTrends,
+      }));
     },
     get trendingMovies() {
       return data.filter((movie) => movie.isTrending);
@@ -81,22 +99,6 @@ export const useMovieDataStore = create<State & Actions>((set) => {
       if (movie) {
         movie.isBookmarked = !movie.isBookmarked;
       }
-    },
-
-    get currentData() {
-      if (this.activeFilter === FILTERS.BOOKMARKED) {
-        return this.bookmarkedMovies;
-      }
-
-      if (this.activeFilter === FILTERS.TV_SHOWS) {
-        return this.tvShows;
-      }
-
-      if (this.activeFilter === FILTERS.MOVIES) {
-        return this.movies;
-      }
-
-      return this.textFilteredData;
     },
   };
 });
