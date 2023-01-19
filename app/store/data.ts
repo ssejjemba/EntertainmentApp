@@ -1,4 +1,5 @@
 import create from "zustand";
+import { FILTERS } from "~/constants/constants";
 import data from "../../public/data.json";
 
 interface Trending {
@@ -46,7 +47,7 @@ type Actions = {
 
 export const useMovieDataStore = create<State & Actions>((set) => {
   return {
-    activeFilter: "text",
+    activeFilter: FILTERS.TEXT,
     activeFilterText: "",
     setActiveFilter: (filter: string) =>
       set((state) => ({ activeFilter: filter })),
@@ -83,15 +84,15 @@ export const useMovieDataStore = create<State & Actions>((set) => {
     },
 
     get currentData() {
-      if (this.activeFilter === "bookmarks") {
+      if (this.activeFilter === FILTERS.BOOKMARKED) {
         return this.bookmarkedMovies;
       }
 
-      if (this.activeFilter === "tvshows") {
+      if (this.activeFilter === FILTERS.TV_SHOWS) {
         return this.tvShows;
       }
 
-      if (this.activeFilter === "movies") {
+      if (this.activeFilter === FILTERS.MOVIES) {
         return this.movies;
       }
 

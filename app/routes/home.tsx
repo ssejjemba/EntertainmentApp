@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Nav, links as NavigationStyles } from "~/components/nav/Navigation";
 import {
   TrendingMovies,
@@ -24,17 +23,18 @@ export const links = () => [
 ];
 
 export default function Home() {
-  const [movieCategory, setMovieCategory] = useState("");
   const {
     currentData,
     activeFilterText,
+    activeFilter,
+    setActiveFilter,
     setActiveFilterText,
     showTrendingMovies,
     trendingMovies,
   } = useMovieDataStore((state) => state);
   return (
     <div className="home_container">
-      <Nav movieCategory={movieCategory} setMovieCategory={setMovieCategory} />
+      <Nav movieCategory={activeFilter} setMovieCategory={setActiveFilter} />
       <main>
         <SearchInput value={activeFilterText} onChange={setActiveFilterText} />
         {showTrendingMovies && <TrendingMovies movies={trendingMovies} />}
