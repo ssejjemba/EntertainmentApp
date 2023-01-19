@@ -1,7 +1,10 @@
 import { useState } from "react";
 import { Nav, links as NavigationStyles } from "~/components/nav/Navigation";
 import { Row, links as RowStyles } from "~/components/row/Row";
-import { Grid, links as gridStyles } from "~/components/grid/Grid";
+import {
+  MovieList,
+  links as gridStyles,
+} from "~/components/movie-list/MovieList";
 import {
   SearchInput,
   links as SearchInputStyles,
@@ -24,7 +27,7 @@ export default function Home() {
       <main>
         <SearchInput />
         <Row />
-        <Grid movieCategory={movieCategory} />
+        <MovieList movieCategory={movieCategory} />
       </main>
     </div>
   );

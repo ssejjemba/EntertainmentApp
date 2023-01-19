@@ -17,7 +17,7 @@ interface Thumbnail {
   regular?: Regular;
 }
 
-interface Movie {
+export interface Movie {
   title: string;
   thumbnail: Thumbnail;
   year: number;
