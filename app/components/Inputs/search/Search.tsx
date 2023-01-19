@@ -7,6 +7,8 @@ export const links = () => [{ rel: "stylesheet", href: styles }];
 type SearchInputProps = {
   children?: React.ReactNode;
   id?: string;
+  onChange: (text: string) => void;
+  value?: string;
 };
 
 export const SearchInput = React.forwardRef(
@@ -32,7 +34,8 @@ export const SearchInput = React.forwardRef(
           id={props.id}
           className="search_input medium_heading"
           type="search"
-          {...props}
+          value={props.value}
+          onChange={(event) => props.onChange(event.target.value)}
           ref={ref}
           data-search-input
           placeholder="Search for movies or TV series"

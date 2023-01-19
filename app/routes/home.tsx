@@ -1,6 +1,9 @@
 import { useState } from "react";
 import { Nav, links as NavigationStyles } from "~/components/nav/Navigation";
-import { Row, links as RowStyles } from "~/components/row/Row";
+import {
+  TrendingMovies,
+  links as RowStyles,
+} from "~/components/trending/Trending";
 import {
   MovieList,
   links as gridStyles,
@@ -10,6 +13,7 @@ import {
   links as SearchInputStyles,
 } from "~/components/Inputs/search/Search";
 import styles from "../styles/home.css";
+import { useMovieDataStore } from "~/store/data";
 
 export const links = () => [
   { rel: "stylesheet", href: styles },
@@ -21,13 +25,15 @@ export const links = () => [
 
 export default function Home() {
   const [movieCategory, setMovieCategory] = useState("");
+  const { currentData, activeFilterText, setActiveFilterText } =
+    useMovieDataStore((state) => state);
   return (
     <div className="home_container">
       <Nav movieCategory={movieCategory} setMovieCategory={setMovieCategory} />
       <main>
-        <SearchInput />
-        <Row />
-        <MovieList movieCategory={movieCategory} />
+        <SearchInput value={activeFilterText} onChange={setActiveFilterText} />
+        <TrendingMovies />
+        <MovieList movies={currentData} />
       </main>
     </div>
   );

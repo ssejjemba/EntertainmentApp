@@ -1,22 +1,24 @@
 import styles from "./styles.css";
 import { Banner, links as BannerStyles } from "../banner/Banner";
-import { useMovieDataStore } from "~/store/data";
+import type { Movie } from "~/store/data";
 
 export const links = () => [
   { rel: "stylesheet", href: styles },
   ...BannerStyles(),
 ];
 
-export function Row(): JSX.Element {
-  const data = useMovieDataStore((state) => state.data);
+type TrendingMovieProps = {
+  movies: Movie[];
+};
 
+export function TrendingMovies(props: TrendingMovieProps): JSX.Element {
   return (
     <div className="row">
       <h1 className="row_title large_heading">Trending</h1>
 
       <div className="row_movie_container">
         <>
-          {data.map((movie) => {
+          {props.movies.map((movie) => {
             return (
               movie.isTrending && (
                 <Banner
