@@ -34,8 +34,6 @@ export const AuthenticatedApplication = () => {
     </button>
   ));
 
-  //search functionality logic
-
   const [searchField, setsearchfield] = useState('');
 
   const storeData = useMovieDataStore((state) => state.data);

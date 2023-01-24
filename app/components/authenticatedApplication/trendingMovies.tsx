@@ -17,7 +17,10 @@ export const TrendingMovies = (props: trendingMovieProps) => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setSlideIndex((prevIndex) => prevIndex + 1);
+      setSlideIndex((prevIndex) => {
+        console.log(prevIndex);
+        return prevIndex + 1;
+      });
     }, 3000);
     return () => clearInterval(interval);
   }, []);
