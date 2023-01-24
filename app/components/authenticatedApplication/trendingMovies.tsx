@@ -1,5 +1,4 @@
-import React, { useEffect } from 'react';
-
+import React, { useEffect, useState } from 'react';
 import { Thumbnail } from '../thumbnail/thumbnail';
 import thumbnailDot from '../../../public/assets/thumbnailDot.svg';
 import { Movie } from '~/store/data';
@@ -12,33 +11,15 @@ type trendingMovieProps = {
 export const TrendingMovies = (props: trendingMovieProps) => {
   const { data, addBookmarkedData } = props;
 
+  const [slideIndex, setSlideIndex] = useState(0);
+
   const trendingMovieData = data.filter((item) => item.isTrending);
 
   useEffect(() => {
-    const slides = document.querySelectorAll(
-      '.trending',
-    ) as unknown as HTMLCollectionOf<HTMLElement>;
-
-    const slideCount = slides.length;
-    let i = 0;
-
-    function moveLeft() {
-      i++;
-      if (i < slideCount) {
-        slides[i].style.width = '0';
-        slides[i - 1].style.width = '-100%';
-      } else {
-        i = 0;
-        slides[i].style.width = '0';
-        slides[slideCount - 1].style.width = '-100%';
-
-        for (let x = 1; x < slideCount - 1; x++) {
-          slides[x].style.width = '100%';
-        }
-      }
-    }
-
-    setInterval(moveLeft, 3000);
+    const interval = setInterval(() => {
+      setSlideIndex((prevIndex) => prevIndex + 1);
+    }, 3000);
+    return () => clearInterval(interval);
   }, []);
 
   return (
@@ -47,7 +28,7 @@ export const TrendingMovies = (props: trendingMovieProps) => {
         <p className="category_tag">Trending</p>
         <div className="trending_movies--container ">
           {trendingMovieData.map((item) => (
-            <div key={item.title} className="thumbnail_wrapper trending">
+            <div key={item.title} className={`thumbnail_wrapper trending slide-${slideIndex}`}>
               <Thumbnail
                 medium={item.thumbnail?.regular?.medium}
                 large={item.thumbnail?.regular?.large}

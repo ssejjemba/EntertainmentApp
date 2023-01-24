@@ -176,3 +176,15 @@
   max-width: 470px;
   max-height: 230px;
 }
+
+.slide-0 {
+  transform: translateX(0%);
+}
+
+.slide-1 {
+  transform: translateX(-100%);
+}
+
+.slide-2 {
+  transform: translateX(-200%);
+}
