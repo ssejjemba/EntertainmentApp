@@ -39,6 +39,7 @@ type State = {
 type Actions = {
   setActiveFilter: (filter: string) => void;
   setActiveFilterText: (text: string) => void;
+  toggleBookmark: (title: string) => void;
 };
 
 function getCurrentData(newFilter: string, newFilterText?: string) {
@@ -58,7 +59,9 @@ function getCurrentData(newFilter: string, newFilterText?: string) {
     return data;
   }
 
-  return data.filter((movie) => movie.title.includes(newFilterText));
+  return data.filter((movie) =>
+    movie.title.includes(newFilterText[0].toUpperCase())
+  );
 }
 
 export const useMovieDataStore = create<State & Actions>((set) => {
@@ -99,6 +102,13 @@ export const useMovieDataStore = create<State & Actions>((set) => {
       if (movie) {
         movie.isBookmarked = !movie.isBookmarked;
       }
+
+      set((state) => ({
+        activeData: getCurrentData(
+          state.activeFilter,
+          state.activeFilter === FILTERS.TEXT ? state.activeFilterText : ""
+        ),
+      }));
     },
   };
 });

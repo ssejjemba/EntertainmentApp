@@ -33,6 +33,7 @@ export default function Home() {
     setActiveFilterText,
     showTrendingMovies,
     trendingMovies,
+    toggleBookmark,
   } = useMovieDataStore((state) => state);
   useEffect(() => {
     setActiveFilter(FILTERS.TEXT);
@@ -50,7 +51,7 @@ export default function Home() {
           />
         )}
         {showTrendingMovies && <TrendingMovies movies={trendingMovies} />}
-        <MovieList movies={activeData} />
+        <MovieList movies={activeData} toggleBookmark={toggleBookmark} />
       </main>
     </div>
   );

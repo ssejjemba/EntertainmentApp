@@ -9,9 +9,13 @@ export const links = () => [
 
 type MovieListProps = {
   movies: Movie[];
+  toggleBookmark: (title: string) => void;
 };
 
-export function MovieList({ movies }: MovieListProps): JSX.Element {
+export function MovieList({
+  movies,
+  toggleBookmark,
+}: MovieListProps): JSX.Element {
   return (
     <div className="grid">
       <h1 className="grid_title large_heading">Recommended for you</h1>
@@ -30,6 +34,7 @@ export function MovieList({ movies }: MovieListProps): JSX.Element {
                 category={movie.category}
                 rating={movie.rating}
                 bookmarked={movie.isBookmarked}
+                toggleBookmark={toggleBookmark}
               />
             );
           })}

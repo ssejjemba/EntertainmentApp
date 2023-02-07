@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   BookmarkIcon,
   links as BookmarkStyles,
@@ -22,17 +22,17 @@ type ThumbnailProps = {
   category?: string;
   rating?: string;
   bookmarked?: boolean;
+  toggleBookmark: (title: string) => void;
 };
 
 export const Thumbnail = (props: ThumbnailProps) => {
-  const [IsBookmarked, setIsbookmarked] = useState(props.bookmarked);
   return (
     <div
       className="thumbnail_container"
       data-testid="thumbnail"
-      onClick={() => setIsbookmarked(!IsBookmarked)}
+      onClick={() => props.toggleBookmark(props.title)}
     >
-      <BookmarkIcon className={IsBookmarked ? "active" : ""} />
+      <BookmarkIcon className={props.bookmarked ? "active" : ""} />
       <picture>
         <source media="(min-width:768px)" srcSet={props.large} />
         <source media="(min-width:465px)" srcSet={props.medium} />
